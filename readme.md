@@ -83,6 +83,7 @@ popular package manager npm*
 * Monitoring via Application Insights
 
 ### 8. Advanced Tools
+* Scaffolding (Yeoman)
 * View render engines (Handlebars, Jade)
 * CSS extensions (SASS)
 * Task runners (Gulp) 
