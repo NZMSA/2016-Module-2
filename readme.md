@@ -38,8 +38,6 @@ and task runners.
 
 [JS (W3 Schools)](http://www.w3schools.com/js/js_intro.asp)
 
-test
-
 ### 2. Development environment
 * Visual Studio Code
 * Installing Node.JS for npm (package manager)
