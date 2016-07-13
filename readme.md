@@ -47,10 +47,14 @@ and task runners.
 *Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly
 popular package manager npm*
 
-### 3. Libraries, Frameworks and APIs
+### 3. Libraries, Frameworks (Frontend)
 * Bootstrap for responsive front ends
 * jQuery + plugins 
-* REST APIs and how to access them (using AJAX)
+
+### 4. REST APIs
+* What are REST APIs
+* Demo some simple APIs (like currency conversion)
+* Calling them using AJAX
 
 *We will do these demos using the environment setup in the last section*
 
@@ -61,13 +65,24 @@ popular package manager npm*
 
 [REST APIs](http://www.programmableweb.com/api-university/what-are-apis-and-how-do-they-work)
 
-### 4. Typescipt
+### 5. Typescript
 * What is it and why we need it
 * Syntax (very similar to JS)
 * Compiling TS to JS
 * Debugging (linting & developer console) 
 
-### 5. Advanced Tools
+### 6. Source Control
+* What is it and why we need it
+* Creating a Github account and installing SourceTree
+* Cloning + adding files
+* Committing changes
+
+### 7. Deployment to Azure
+* Setting up Azure account
+* Linking to source control via continuous deployment
+* Monitoring via Application Insights
+
+### 8. Advanced Tools
 * View render engines (Handlebars, Jade)
 * CSS extensions (SASS)
 * Task runners (Gulp) 
@@ -79,8 +94,10 @@ popular package manager npm*
 * HTML, CSS, JS
 * Development environment
 * Libraries, Frameworks
+* APIs
 
 ### Day 2
-* APIs
-* Typescipt
+* Typescript
+* Source control
+* Deploying to Azure
 * Advanced Tools
