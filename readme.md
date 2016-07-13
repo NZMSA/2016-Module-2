@@ -92,20 +92,24 @@ popular package manager npm*
 
 ## Schedule
 ### Day 1 (30 July 2016)
-10:00 am: Introduction
-10:15 am: HTML, CSS, JS
-11:15 am: Development Environment
-12:00 pm: Lunch 
-1:00 pm: Libraries, Frameworks
-2:00 pm: APIs
-3:00 pm: Wrap up
+Time | Content
+---- | -------
+10:00 am | Introduction
+10:15 am | HTML, CSS, JS
+11:15 am | Development Environment
+12:00 pm | Lunch 
+1:00 pm | Libraries, Frameworks
+2:00 pm | APIs
+3:00 pm | Wrap up
 
 ### Day 2 (6 August 2016)
-10:00 am: Introduction
-10:15 am: Typescript
-11:15 am: Source control
-12:00 pm: Lunch 
-1:00 pm: Deploying to Azure
-2:00 pm: Advanced Tools
-2:30 pm: Q&A, Submission, Etc
-3:00 pm: Wrapup
+Time | Content
+---- | -------
+10:00 am | Introduction
+10:15 am | Typescript
+11:15 am | Source control
+12:00 pm | Lunch 
+1:00 pm | Deploying to Azure
+2:00 pm | Advanced Tools
+2:30 pm | Q&A, Submission, Etc
+3:00 pm | Wrapup
