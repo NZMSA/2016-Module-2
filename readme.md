@@ -38,6 +38,8 @@ and task runners.
 
 [JS (W3 Schools)](http://www.w3schools.com/js/js_intro.asp)
 
+test
+
 ### 2. Development environment
 * Visual Studio Code
 * Installing Node.JS for npm (package manager)
@@ -91,14 +93,21 @@ popular package manager npm*
 *Note we will introduce these for more advance students, but not mandatory you know this*
 
 ## Schedule
-### Day 1
-* HTML, CSS, JS
-* Development environment
-* Libraries, Frameworks
-* APIs
+### Day 1 (30 July 2016)
+10:00 am: Introduction
+10:15 am: HTML, CSS, JS
+11:15 am: Development Environment
+12:00 pm: Lunch 
+1:00 pm: Libraries, Frameworks
+2:00 pm: APIs
+3:00 pm: Wrap up
 
-### Day 2
-* Typescript
-* Source control
-* Deploying to Azure
-* Advanced Tools
+### Day 2 (6 August 2016)
+10:00 am: Introduction
+10:15 am: Typescript
+11:15 am: Source control
+12:00 pm: Lunch 
+1:00 pm: Deploying to Azure
+2:00 pm: Advanced Tools
+2:30 pm: Q&A, Submission, Etc
+3:00 pm: Wrapup
