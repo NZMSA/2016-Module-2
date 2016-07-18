@@ -31,7 +31,7 @@ and task runners.
 
 *Note that this will be demo'd using codepen.io* 
 
-### [2. Development Environment](https://git.io/vKwTK)
+### [2. Development Environment](2. Development Environment)
 * Visual Studio Code
 * Installing Node.JS for npm (package manager)
 * Installing browser-sync for quick testing
