@@ -24,65 +24,51 @@ and task runners.
 
 ## Training
 
-### 1. HTML, CSS and JS
+### [1. HTML, CSS and JS]()
 * HTML5 concepts (elements, controls, attributes, etc)
 * CSS3 concepts (selectors, classes, inline styles, media queries)
 * JS concepts (basic programming principals, syntax, conventions)
 
-*Note that this will be demo'd using codepen.io for simplicity* 
+*Note that this will be demo'd using codepen.io* 
 
-#### Resources
-[HTML (W3 Schools)](http://www.w3schools.com/html/html_intro.asp)
-
-[CSS (W3 Schools)](http://www.w3schools.com/css/css_intro.asp)
-
-[JS (W3 Schools)](http://www.w3schools.com/js/js_intro.asp)
-
-### 2. Development environment
+### [2. Development Environment]()
 * Visual Studio Code
 * Installing Node.JS for npm (package manager)
 * Installing browser-sync for quick testing
 * Chrome/Edge developer console for logs and running commands or seeing variable contents
 
-*Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly
+*Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly 
 popular package manager npm*
 
-### 3. Libraries, Frameworks (Frontend)
+### [3. Libraries and Frameworks (Frontend)]()
 * Bootstrap for responsive front ends
 * jQuery + plugins 
 
-### 4. REST APIs
+### [4. REST APIs]()
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)
 * Calling them using AJAX
 
 *We will do these demos using the environment setup in the last section*
 
-#### Resources
-[Bootstrap](http://www.w3schools.com/bootstrap/)
-
-[jQuery](http://www.w3schools.com/bootstrap/)
-
-[REST APIs](http://www.programmableweb.com/api-university/what-are-apis-and-how-do-they-work)
-
-### 5. Typescript
+### [5. Typescript]()
 * What is it and why we need it
 * Syntax (very similar to JS)
 * Compiling TS to JS
 * Debugging (linting & developer console) 
 
-### 6. Source Control
+### [6. Source Control]()
 * What is it and why we need it
 * Creating a Github account and installing SourceTree
 * Cloning + adding files
 * Committing changes
 
-### 7. Deployment to Azure
+### [7. Deployment to Azure]()
 * Setting up Azure account
 * Linking to source control via continuous deployment
 * Monitoring via Application Insights
 
-### 8. Advanced Tools
+### [8. Advanced Tools]()
 * Scaffolding (Yeoman)
 * View render engines (Handlebars, Jade)
 * CSS extensions (SASS)
