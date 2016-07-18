@@ -24,7 +24,7 @@ and task runners.
 
 ## Training
 
-### [1. HTML, CSS and JS](1.%20HTML%2C%20CSS%20and%20JS)
+### [1. HTML, CSS and JS](1. HTML, CSS and JS)
 * HTML5 concepts (elements, controls, attributes, etc)
 * CSS3 concepts (selectors, classes, inline styles, media queries)
 * JS concepts (basic programming principals, syntax, conventions)
@@ -40,35 +40,35 @@ and task runners.
 *Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly 
 popular package manager npm*
 
-### [3. Libraries and Frameworks (Frontend)](https://git.io/vKwTH)
+### [3. Libraries and Frameworks (Frontend)](3. Libraries and Frameworks)
 * Bootstrap for responsive front ends
 * jQuery + plugins 
 
-### [4. REST APIs](https://git.io/vKwT7)
+### [4. REST APIs](4. REST APIs)
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)
 * Calling them using AJAX
 
 *We will do these demos using the environment setup in the last section*
 
-### [5. Typescript](https://git.io/vKwT5)
+### [5. Typescript](5. Typescript)
 * What is it and why we need it
 * Syntax (very similar to JS)
 * Compiling TS to JS
 * Debugging (linting & developer console) 
 
-### [6. Source Control](https://git.io/vKwTN)
+### [6. Source Control](6. Source Control)
 * What is it and why we need it
 * Creating a Github account and installing SourceTree
 * Cloning + adding files
 * Committing changes
 
-### [7. Deployment to Azure](https://git.io/vKwTp)
+### [7. Deployment to Azure](7. Deployment to Azure)
 * Setting up Azure account
 * Linking to source control via continuous deployment
 * Monitoring via Application Insights
 
-### [8. Advanced Tools](https://git.io/vKwTj)
+### [8. Advanced Tools](8. Advanced Tools)
 * Scaffolding (Yeoman)
 * View render engines (Handlebars, Jade)
 * CSS extensions (SASS)
