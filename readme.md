@@ -24,7 +24,7 @@ and task runners.
 
 ## Training
 
-### [1. HTML, CSS and JS](https://git.io/vKwTZ)
+### [1. HTML, CSS and JS](1.%20HTML%2C%20CSS%20and%20JS)
 * HTML5 concepts (elements, controls, attributes, etc)
 * CSS3 concepts (selectors, classes, inline styles, media queries)
 * JS concepts (basic programming principals, syntax, conventions)
