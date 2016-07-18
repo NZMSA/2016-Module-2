@@ -1,4 +1,4 @@
-# 1. HTML, CSS and JS
+# 6. Source Control
 ## Introduction
 [intro goes here]
 

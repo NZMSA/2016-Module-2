@@ -1,4 +1,4 @@
-# 1. HTML, CSS and JS
+# 2. Development Environment
 ## Introduction
 [intro goes here]
 

@@ -1,4 +1,4 @@
-# 1. HTML, CSS and JS
+# 1. 5. Typescript
 ## Introduction
 [intro goes here]
 
