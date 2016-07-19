@@ -23,12 +23,19 @@ Now that you have a basic understanding of the languages behind web apps (HTML, 
 
 **Description**: Before you ship your web app, there are usually a few things you need to do. Optimise images, check your Js files are error free (linting), compiling your typescript code, optimising your file sizes (minifying), and making sure Jim doesn’t rip off your JavaScript code you spent a long time writing (obfuscating/uglifying). These are tedious processes and you’re better off spending that time on developing. Task Runners allow you to automate all of these processes, using a simple script.
 
-### Web Template Engines 
+### HTML Preprocessors / Template Engines
 **Examples**: Razor (ASP.NET), Jade, Handlebars
 
 **Purpose**: Build HTML views using templates.
 
 **Description**: As you move beyond simple single page apps, you’re going to end up with a lot of repetitive markup scattered everywhere, making it a nightmare to maintain. What happens if you want to edit that footer on the bottom of the page? You don’t want to have to go and edit every single HTML page containing it. Template engines help solve these problems by allowing you to efficiently reuse HTML code. They also allow you to populate pages dynamically from the server, using clean, readable, markup embedded in the HTML (or another markup language in some cases like jade).
+
+### CSS Preprocessors
+**Examples**: SASS, LESS
+
+**Purpose**: Simplify styling
+
+**Description**: Same convenience as HTML proprocessors, for CSS. 
 
 ## Learning Outcomes
 * Understand the tools out there that make your life as a developer easier
@@ -43,3 +50,6 @@ Now that you have a basic understanding of the languages behind web apps (HTML, 
 * [Yeoman](http://yeoman.io/) - Best scaffolding tool
 * [Gulp.js](http://gulpjs.com/) - Modern task runner
 * [Jade](http://jade-lang.com/) - Popular template engine
+
+### Extra Learning Resources
+* [Learn to Code Advanced HTML&CSS - Preprocessors](http://learn.shayhowe.com/advanced-html-css/preprocessors/)
