@@ -34,7 +34,7 @@ and task runners.
 ### 2. Development Environment
 * Visual Studio Code
 * Installing Node.JS for npm (package manager)
-* Installing browser-sync for quick testing
+* Installing browser-sync for live testing
 * Chrome/Edge developer console for logs and running commands or seeing variable contents
 
 *Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly 
@@ -47,18 +47,16 @@ popular package manager npm*
 ### 4. REST APIs
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)
-* Calling them using AJAX
+* Calling them using AJAX calls
 
 *We will do these demos using the environment setup in the last section*
 
 ### 5. Typescript
-* What is it and why we need it
-* Syntax (very similar to JS)
+* Syntax (comparison with JS)
 * Compiling TS to JS
 * Debugging (linting & developer console) 
 
 ### 6. Source Control
-* What is it and why we need it
 * Creating a Github account and installing SourceTree
 * Cloning + adding files
 * Committing changes
@@ -74,7 +72,7 @@ popular package manager npm*
 * CSS extensions (SASS)
 * Task runners (Gulp) 
 
-*Note we will introduce these for more advance students, but not mandatory you know this*
+*Extra for experts to make dev life easier, but not mandatory for MSA*
 
 ## Schedule
 ### Day 1 (30 July 2016)
@@ -98,4 +96,4 @@ Time | Content
 1:00 pm | Deploying to Azure
 2:00 pm | Advanced Tools
 2:30 pm | Q&A, Submission, Etc
-3:00 pm | Wrapup
+3:00 pm | Wrap up
