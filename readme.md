@@ -57,7 +57,7 @@ popular package manager npm*
 * Debugging (linting & developer console) 
 
 ### 6. Source Control
-* Creating a Github account and installing SourceTree
+* Installing Git and Creating a Github account 
 * Cloning + adding files
 * Committing changes
 
