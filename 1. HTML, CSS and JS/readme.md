@@ -10,7 +10,7 @@ development tools like Node.js and frameworks like AngularJS or ReactJS
 utilise JavaScript.
 ## Learning Outcomes
 * Know basic HTML and CSS constructs to get you started to make a one pager
-* Outcome 2
+* Become familiar with the use of the box model for web development
 * Understand what JavaScript is and when to use it.
 * Create and call JavaScript functions
 * Use JavaScript to display output
@@ -64,18 +64,29 @@ h1 is the most important heading. We can also use other headings like h2, h3, h4
     <!--This is a comment-->
     <h1>My First Heading</h1>
 ```
-## 5. Adding a Paragraph
 
-Below the heading, write the following paragraphs:
+## 5. Adding a surrounding div tag
+
+Below the heading, write the following div:
 ```
-    <p>My first paragraph</p>
+    <div id=boxModel>
+
+    </div>
+
+```
+We use this div to create the box model. In CSS, the term "box model" is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+## 6. Adding a Paragraph
+
+Below the division, write the following paragraphs:
+```
+    <p class=firstParagraph> My first paragraph. </p>
 
     <p>This is <br> a para<br>graph with line breaks</p>
 ```
 
-The first paragraph is displayed as one paragraph. The sencond paragraph contains line breaks because "br" tells the browser to start on a new line.
+The first paragraph is displayed as one paragraph it also has a class name firstParagraph. The second paragraph contains line breaks because "br" tells the browser to start on a new line.
 
-## 6. Whitespace is ignored.
+## 7. Whitespace is ignored.
 Add the following below the paragraphs:
 ```
     This
@@ -88,7 +99,7 @@ Add the following below the paragraphs:
 ```
 The text are all displayed on one line since HTML ignores whitespace.
 
-## 7. Making a Hyperlink.
+## 8. Making a Hyperlink.
 
 Add a link to microsoft.com below the set of text.
 
@@ -98,7 +109,7 @@ Add a link to microsoft.com below the set of text.
 
 The href attribute tells the browser where to go. In this instance, the link takes you to microsoft.com. The text in between the a tags are the displayed text in the browser.
 
-## 8. Ordered lists
+## 9. Ordered lists
 
 In order to use an ordered list, we need to type in the ol tags.
 
@@ -118,7 +129,7 @@ Below the hyperlink add the following:
         <li>Item 3</li>
     </ol>
 ```
-## 9. Unordered Lists
+## 10. Unordered Lists
 Unordered lists are look like ordered lists and are coded like ordered lists as well.
 
 The difference is that instead of formatting the list with numbers to show order, the list is formatted using bullet points by default.
@@ -135,7 +146,7 @@ Below the ordered list, add the following:
         <li>Item 3</li>
     </ul>
 ```
-## 10. Adding an image
+## 11. Adding an image
 
 Below the unordered list, add the following:
 ```    
@@ -166,12 +177,78 @@ There will be no noticeable change seen in the HTML file, since we have not yet 
 
 Open styles.css in your text editor. Then add the following line:
 ```
-h1 {
-	color: yellow;
-	font-size: 60px;
+h1{
+  Color:yellow;
+  Font-size: 60px;
+  background-color:#b0c4de;
 }
 ```
-Refresh your site. The h1 heading at the very top should now have a font color of yellow and a font size of 60px.
+Refresh your site. The h1 heading at the very top should now have a font color of yellow and a font size of 60px with a blue background colour represented by the hex value "#b0c4de".
+
+## 4. Changing colour of text
+
+Add this code below step 3 in styles.css
+
+Changes the colour of the text in the first paragraph to red
+```
+
+p.firstParagraph{
+  color:Red;
+}
+
+```
+
+## 5. Selectors
+
+Add this code below step 4 in styles.css
+
+Changes the colour of the link to hotpink when the cursor hovers over it
+```
+
+a:hover{
+Color: hotpink;
+}
+
+```
+
+## 6. Box Model
+
+Add this code below step 5 in styles.css
+
+Demonstrates the use of the box model structure
+```
+
+#boxModel{
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid purple;
+    padding: 25px;
+    margin: 25px;
+}
+
+```
+
+Explanation of the different parts:
+
+* Content - The content of the box, where text and images appear
+* Padding - Clears an area around the content. The padding is transparent
+* Border - A border that goes around the padding and content
+* Margin - Clears an area outside the border. The margin is transparent
+
+The box model allows us to add a border around elements, and to define space between elements. 
+
+## 7. Background
+
+Add this code below step 6 in styles.css 
+
+Specifies an image to use as the background
+```
+
+body{
+ background-image: url("http://www.planwallpaper.com/static/images/ZhGEqAP.jpg");
+}
+
+```
 
 # Part 3
 ### JavaScript Code
