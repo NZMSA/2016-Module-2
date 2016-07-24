@@ -1,6 +1,18 @@
 # 1. HTML, CSS and JS
 ## Introduction
-[intro goes here]
+
+HTML is a markup language for describing web documents (web pages).
+
+* HTML stands for Hyper Text Markup Language
+* A markup language is a set of markup tags
+* HTML documents are described by HTML tags
+* Each HTML tag describes different document content
+
+What is CSS?
+* CSS stands for Cascading Style Sheets
+* CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+* CSS saves a lot of work. It can control the layout of multiple web pages all at once
+* External stylesheets are stored in CSS files
 
 You will also learn JavaScript. It is 
 a programming language of the web that helps add interactivity to 
