@@ -191,7 +191,6 @@ Add this code below step 3 in styles.css
 
 Changes the colour of the text in the first paragraph to red
 ```
-
 p.firstParagraph{
   color:Red;
 }
@@ -204,7 +203,6 @@ Add this code below step 4 in styles.css
 
 Changes the colour of the link to hotpink when the cursor hovers over it
 ```
-
 a:hover{
 Color: hotpink;
 }
@@ -217,7 +215,6 @@ Add this code below step 5 in styles.css
 
 Demonstrates the use of the box model structure
 ```
-
 #boxModel{
     background-color: lightgrey;
     width: 300px;
@@ -243,9 +240,8 @@ Add this code below step 6 in styles.css
 
 Specifies an image to use as the background
 ```
-
 body{
- background-image: url("http://www.planwallpaper.com/static/images/ZhGEqAP.jpg");
+  background-image: url("http://allpicts.in/download/1396/light_blue_wallpaper_pattern_for_background.jpg/");
 }
 
 ```
@@ -300,8 +296,8 @@ A JavaScript function is a block of code designed to perform a particular task.
 The syntax for a function in JavaScript is as follows:
 ```
 function name(parameter1, parameter2) {
-    code to be executed
-}
+        code to be executed
+} 
 ```
 
 We call the function a certain name, and give it 2 inputs named parameter1
