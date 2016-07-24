@@ -34,7 +34,7 @@ utilise JavaScript.
 ## 1. HTML Structure.
 
 First, let's create an empty HTML page. It will contain the head and the body.
-```
+```html
 <!DOCTYPE html>
 
 <head>
@@ -51,7 +51,7 @@ First, let's create an empty HTML page. It will contain the head and the body.
 Inside the head tags, we will type in the page title.
 
 If you run index.html in a browser, you will see that it's title is now "Page Title".
-```
+```html
 <head>
     <title>Page Title</title>
 </head>
@@ -61,7 +61,7 @@ If you run index.html in a browser, you will see that it's title is now "Page Ti
 Inside the body,we will type in a comment. This will not be displayed on the web page.
 
 Comments may be useful for developers reading the code.
-```
+```html
 <body>
 
     <!--This is a comment-->
@@ -72,7 +72,7 @@ Comments may be useful for developers reading the code.
 Below the comment, we will add the heading "My First Heading".
 
 h1 is the most important heading. We can also use other headings like h2, h3, h4, h5, and h6, with h6 having the least importance.
-```
+```html
     <!--This is a comment-->
     <h1>My First Heading</h1>
 ```
@@ -80,7 +80,7 @@ h1 is the most important heading. We can also use other headings like h2, h3, h4
 ## 5. Adding a surrounding div tag
 
 Below the heading, write the following div:
-```
+```html
     <div id=boxModel>
 
     </div>
@@ -90,7 +90,7 @@ We use this div to create the box model. In CSS, the term "box model" is used wh
 ## 6. Adding a Paragraph
 
 Below the division, write the following paragraphs:
-```
+```html
     <p class=firstParagraph> My first paragraph. </p>
 
     <p>This is <br> a para<br>graph with line breaks</p>
@@ -100,7 +100,7 @@ The first paragraph is displayed as one paragraph it also has a class name first
 
 ## 7. Whitespace is ignored.
 Add the following below the paragraphs:
-```
+```html
     This
     Is
     All
@@ -115,8 +115,8 @@ The text are all displayed on one line since HTML ignores whitespace.
 
 Add a link to microsoft.com below the set of text.
 
-```
-"<a href="http://www.microsoft.com">This is a link to Microsoft</a>"
+```html
+<a href="http://www.microsoft.com">This is a link to Microsoft</a>
 ```
 
 The href attribute tells the browser where to go. In this instance, the link takes you to microsoft.com. The text in between the a tags are the displayed text in the browser.
@@ -132,7 +132,7 @@ The text inside the li tags is displayed as the text for each list element.
 Since this is an ordered list, the list elements are automatically formatted with numbers.
 
 Below the hyperlink add the following:
-```    
+```html    
     <h2>Ordered List</h2>
 
     <ol>
@@ -149,7 +149,7 @@ The difference is that instead of formatting the list with numbers to show order
 In terms of coding, we use ul instead of ol. The rest of the code remains the same.
 
 Below the ordered list, add the following:
-```
+```html
     <h2>Unordered List</h2>
 
     <ul>
@@ -177,7 +177,7 @@ To do this, right click on an empty space, click New > Text Document. Then name 
 ## 2. Add an external stylesheet.
 
 Inside the head tags of index.html, add the following line.
-```
+```css
 <link rel="stylesheet" href="styles.css">
 ```
 The rel attribute specifies the relationship between the HTML page and the CSS page.
@@ -188,7 +188,7 @@ There will be no noticeable change seen in the HTML file, since we have not yet 
 ## 3. Add styles to the CSS file.
 
 Open styles.css in your text editor. Then add the following line:
-```
+```css
 h1{
   Color:yellow;
   Font-size: 60px;
@@ -202,7 +202,7 @@ Refresh your site. The h1 heading at the very top should now have a font color o
 Add this code below step 3 in styles.css
 
 Changes the colour of the text in the first paragraph to red
-```
+```css
 p.firstParagraph{
   color:Red;
 }
@@ -214,7 +214,7 @@ p.firstParagraph{
 Add this code below step 4 in styles.css
 
 Changes the colour of the link to hotpink when the cursor hovers over it
-```
+```css
 a:hover{
 Color: hotpink;
 }
@@ -226,7 +226,7 @@ Color: hotpink;
 Add this code below step 5 in styles.css
 
 Demonstrates the use of the box model structure
-```
+```css
 #boxModel{
     background-color: lightgrey;
     width: 300px;
@@ -251,7 +251,7 @@ The box model allows us to add a border around elements, and to define space bet
 Add this code below step 6 in styles.css 
 
 Specifies an image to use as the background
-```
+```css
 body{
   background-image: url("http://allpicts.in/download/1396/light_blue_wallpaper_pattern_for_background.jpg/");
 }
@@ -266,7 +266,7 @@ body{
 Since we are using CodePen, we simply need to add the JavaScript 
 code inside the "JS" area. Type in the following JS code:
 
-```
+```js
 document.write("Hello World");
 ```
 
@@ -280,19 +280,19 @@ There are many other ways to display output. Feel free to replace the above
 code with the following code to see them in action.
 * Alerts display a message box with a message of your choice. This output
 method may be obtrusive for the user so use alerts modestly.
-```
+```js
 alert("Hello World");
 ```
 In this case, the message was "Hello World".
 * We can also select an element and change the contents between its tags.
-```
+```js
 document.getElementById("boxModel").innerHTML = "Hello World";
 ```
 In this case, we are getting the element with the Id of "boxModel". 
 Then we are changing the HTML code inside its tags, so it displays "Hello 
 World".
 * We can also display output to the console
-```
+```js
 console.log("Hello World");
 ```
 After typing this, click on the "console" button on the buttom-left part 
@@ -306,20 +306,20 @@ the console.
 A JavaScript function is a block of code designed to perform a particular task.
 
 The syntax for a function in JavaScript is as follows:
-```
+```js
 function name(parameter1, parameter2) {
         code to be executed
 } 
 ```
 
 We call the function a certain name, and give it 2 inputs named parameter1
- and parameter2. We can add more parameters if needed. And then, it
- executes the code inside the curly braces. A value may be returned by 
- the function.
+and parameter2. We can add more parameters if needed. And then, it
+executes the code inside the curly braces. A value may be returned by 
+the function.
 
- For our webpage, we will create a function that shows the date when
- a button is clicked. Here is the code for the function:
- ```
+For our webpage, we will create a function that shows the date when
+a button is clicked. Here is the code for the function:
+```js
 function show() { 
     document.getElementById("demoButton").innerHTML=Date();
 } 
@@ -335,7 +335,7 @@ nothing changes on your page. This is because you haven't called it.
 
 We will call the show function when a button is clicked, so we need to 
 create this button. In the HTML area, type in the following code:
-```
+```js
 <button id="demoButton" onclick="show()">Demo Button</button>
 ```
 Here, we created a button element. We typed in the show()
