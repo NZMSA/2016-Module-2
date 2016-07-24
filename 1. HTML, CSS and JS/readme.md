@@ -3,7 +3,7 @@
 [intro goes here]
 
 ## Learning Outcomes
-* Outcome 1
+* Know basic HTML and CSS constructs to get you started to make a one pager
 * Outcome 2
 
 ## Resources
@@ -12,7 +12,8 @@
 * [Video](http://link.com)
 
 ### Tools
-* [CodePen](http://codepen.io) - Experimenting with HTML, CSS and JS snippets. 
+* [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
+
 
 ### Extra Learning Resources
 * [HTML (W3 Schools)](http://www.w3schools.com/html/html_intro.asp)
