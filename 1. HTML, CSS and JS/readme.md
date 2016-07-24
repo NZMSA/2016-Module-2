@@ -9,7 +9,7 @@ It is useful since it is supported by all browsers and many web
 development tools like Node.js and frameworks like AngularJS or ReactJS
 utilise JavaScript.
 ## Learning Outcomes
-* Outcome 1
+* Know basic HTML and CSS constructs to get you started to make a one pager
 * Outcome 2
 * Understand what JavaScript is and when to use it.
 * Create and call JavaScript functions
@@ -109,7 +109,8 @@ show() function is called.
 * [Video](http://link.com)
 
 ### Tools
-* [CodePen](http://codepen.io) - Experimenting with HTML, CSS and JS snippets. 
+* [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
+
 
 ### Extra Learning Resources
 * [HTML (W3 Schools)](http://www.w3schools.com/html/html_intro.asp)
