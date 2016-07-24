@@ -116,7 +116,7 @@ The text are all displayed on one line since HTML ignores whitespace.
 Add a link to microsoft.com below the set of text.
 
 ```
-"<a href="http://www.microsoft.com">This is a link to Microsoft</a>"
+<a href="http://www.microsoft.com">This is a link to Microsoft</a>
 ```
 
 The href attribute tells the browser where to go. In this instance, the link takes you to microsoft.com. The text in between the a tags are the displayed text in the browser.
