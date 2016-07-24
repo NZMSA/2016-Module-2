@@ -2,7 +2,7 @@
 ## Introduction
 Now that you have a basic understanding of the languages behind web apps (HTML, CSS, JS), you can begin building your own! However, you’ll eventually find that as the complexity of the website increases, maintainability also becomes more difficult. Fortunately, there are plenty of other developers out there who have been through this and as a result, have built tools that can make this process very simple. Here are some of the popular ones out there: 
 
-### Scaffolding Tools 
+### Scaffolding Tools  
 **Examples**: Yeoman
 
 **Purpose**: Create a starter project for common scenarios.
