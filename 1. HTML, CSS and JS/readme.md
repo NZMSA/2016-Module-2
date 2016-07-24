@@ -176,7 +176,7 @@ Refresh your site. The h1 heading at the very top should now have a font color o
 # Part 3
 ### JavaScript Code
 
-1. #### Displaying output
+#### 1. Displaying output
 
 Since we are using CodePen, we simply need to add the JavaScript 
 code inside the "JS" area. Type in the following JS code:
@@ -216,7 +216,7 @@ of the screen to see the output.
 You can also press F12 and click on the "Console" tab to open 
 the console.
 
-2. #### Creating Functions
+#### 2. Creating Functions
 
 A JavaScript function is a block of code designed to perform a particular task.
 
@@ -243,7 +243,7 @@ function show() {
 When the show function is called, it sets the content of the element 
 with the id of "demoButton", to the current date.
 
-3. #### Calling Functions
+#### 3. Calling Functions
 
 Once you are finished typing the show() function, you will notice that 
 nothing changes on your page. This is because you haven't called it.
