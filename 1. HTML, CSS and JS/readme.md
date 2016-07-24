@@ -300,8 +300,8 @@ A JavaScript function is a block of code designed to perform a particular task.
 The syntax for a function in JavaScript is as follows:
 ```
 function name(parameter1, parameter2) {
-        code to be executed
-} 
+    code to be executed
+}
 ```
 
 We call the function a certain name, and give it 2 inputs named parameter1
