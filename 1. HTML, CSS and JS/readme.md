@@ -32,7 +32,6 @@ utilise JavaScript.
 ### Bootcamp Content
 * [Slide Deck](https://1drv.ms/p/s!AhUTdgNym7JMjCWPOxc8FrH2PxKV)
 * [Video](https://youtu.be/hDQB0Oum7L4)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hDQB0Oum7L4" frameborder="0" allowfullscreen></iframe>
 
 ### Tools
 * [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
