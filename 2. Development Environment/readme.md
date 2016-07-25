@@ -16,6 +16,10 @@ To test your website, you will need a web server to host your files. Fortunately
 * Install packages using Node.js
 * Test website using BrowserSync
 
+## Bootcamp Resources
+* Slide Deck: [Download](https://1drv.ms/p/s!AhUTdgNym7JMjCRPvv07X8jIGAV6)
+* Video: Coming soon
+
 ## Tutorial 1: Installation
 ### Setting up Visual Studio Code
 Download and install Visual Studio Code on your machine here [Download Link](https://code.visualstudio.com/).
@@ -117,17 +121,28 @@ We are going to run a simple website using our newly setup environment.
 ![](img/vsc_3.png)
 8. Run the following command:
 ```
-browser-sync start -serve
+browser-sync start --server --files '*'
 ```
-9. Your browser should open up, and the page should show. Try making a change to the html file, save it and reload the page. To stop the server, go to the console, and press `ctrl+c`.
+`browser-sync start` starts BrowserSync, `--server` runs a local server using your current directory as the root and `--files '*'` tells BrowserSync the files it should watch for changes ('*' denotes watching all files). 
+9. Your browser should open up, and the page should show. Try making a change to the html file, save it, and the page should reload automatically. 
 ![](img/vsc_4.png)
+10. To stop the server, go to the console, and press `ctrl+c`.
+
+For more information about the avaiable commands, please see the documentation [here](https://www.browsersync.io/docs/command-line).
 
 
 ### Extra for Experts
+#### sudo on Mac
 If you are using Mac, it is not recommended that you use `sudo` to install global packages. It was used here for the purpose of simplicity.
 
 To fix this once and for all, follow this [tutorial](https://docs.npmjs.com/getting-started/fixing-npm-permissions).
 
+#### BrowserSync options
+If your files are contained in a different directory, specify the relative path after `--server` and files after `--files`, for example:
+```
+browser-sync start --server 'app' --files '[app\*.html, app\styles\*.css]'
+```
+This command will serve files from the app\ folder, and watch all html files in the app\ folder and css files in the app\styles\ folder
 ### Extra Learning Resources
 * [What is npm?](https://docs.npmjs.com/getting-started/what-is-npm)
 * [BrowserSync documentation](https://www.browsersync.io/docs/command-line)
