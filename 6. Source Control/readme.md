@@ -23,7 +23,7 @@ Head over to [GitHub](https://github.com/) and create a new account if you don't
 ## Step 2: Create a Repository
 Open up GitHub and create a 'New Repository' by clicking on the 'plus' icon on the top right corner of the screen
 
-![Create Repository](img/create_repository.png)
+![Create Repository](img/create_repository.PNG)
 
 Give your repository a name and description. You choose to keep the repository public (others can see the source code) or private. 
 
