@@ -121,11 +121,15 @@ We are going to run a simple website using our newly setup environment.
 ![](img/vsc_3.png)
 8. Run the following command:
 ```
-browser-sync start --server --files '*'
+browser-sync start --server --files "*"
 ```
+
 `browser-sync start` starts BrowserSync, `--server` runs a local server using your current directory as the root and `--files '*'` tells BrowserSync the files it should watch for changes ('*' denotes watching all files). 
+
 9. Your browser should open up, and the page should show. Try making a change to the html file, save it, and the page should reload automatically. 
+
 ![](img/vsc_4.png)
+
 10. To stop the server, go to the console, and press `ctrl+c`.
 
 For more information about the avaiable commands, please see the documentation [here](https://www.browsersync.io/docs/command-line).
