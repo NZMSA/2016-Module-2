@@ -31,13 +31,13 @@ You can also choose to initialise with a README if you want.
 
 When you are ready, press 'Create repository'
 
-![Create Repository Form](img/create_repository_form.png)
+![Create Repository Form](img/create_repository_form.PNG)
 
 ## Step 3: Clone Repository
 On the main page of your GitHub repository, click 'Clone or download'
 
 Copy the URL
-![Clone Button](img/clone_button.png)
+![Clone Button](img/clone_button.PNG)
 
 Open up command prompt and navigate to a directory where you want to store your github files (e.g. C:\Users\Hayden\Documents\GitHub\)
 
@@ -45,25 +45,25 @@ Hint: See below on how to navigate using command line
 
 When you are in the directory, type `clone https://github.com/YOUR_ID/YOUR_GITHUB_LINK` (the link you copied earlier)
 
-![Clone Command](img/clone_command.png)
+![Clone Command](img/clone_command.PNG)
 
 ## Step 4: Add Project Files
 Open up your file explorer and navigate to the directory where you cloned your repository files (for me it is C:\Users\Hayden\Documents\GitHub\moodify)
 
 Move your entire project files and folder here
 
-![Copy Files](img/copy_files.png)
+![Copy Files](img/copy_files.PNG)
 
 Back to cmd, type `git status` and you will see that there are many files are 'untracked'  
 (Hint: Make sure you are inside the project folder - cd moodify)
 
-![Git Status](img/git_status.png)
+![Git Status](img/git_status.PNG)
 
 To add the files and folder, type `git add -A` which will add all the untracked files as shown in red.
 
 Now if you type `git status`, you'll notice that all the files are now green 
 
-![Git Add](img/git_add.png)
+![Git Add](img/git_add.PNG)
 
 Now its time to commit these changes. 
 
@@ -73,7 +73,7 @@ To upload these changes to GitHub, type `git push`
 
 If you see something like this, you have successfully uploaded your files to GitHub!
 
-![Git Push](img/git_push.png)
+![Git Push](img/git_push.PNG)
 
 
 ## Basic Workflow
