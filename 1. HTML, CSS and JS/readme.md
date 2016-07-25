@@ -346,8 +346,8 @@ show() function is called.
 [Other Common HTML Events](http://www.w3schools.com/js/js_htmldom_events.asp)
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com)
-* [Video](http://link.com)
+* [Slide Deck](https://1drv.ms/p/s!AhUTdgNym7JMjCWPOxc8FrH2PxKV)
+* [Video](https://youtu.be/hDQB0Oum7L4)
 
 ### Tools
 * [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
