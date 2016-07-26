@@ -28,7 +28,19 @@ utilise JavaScript.
 * Use JavaScript to display output
 * Understand how to create objects in JavaScript
 
-## Demo code
+## Resources
+### Bootcamp Content
+* [Slide Deck](https://1drv.ms/p/s!AhUTdgNym7JMjCWPOxc8FrH2PxKV)
+* [Video](https://youtu.be/hDQB0Oum7L4)
+
+### Tools
+* [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
+
+
+### Extra Learning Resources
+* [HTML (W3 Schools)](http://www.w3schools.com/html/html_intro.asp)
+* [CSS (W3 Schools)](http://www.w3schools.com/css/css_intro.asp)
+* [JS (W3 Schools)](http://www.w3schools.com/js/js_intro.asp)
 
 # Part 1
 ## 1. HTML Structure.
@@ -344,16 +356,3 @@ onclick event is triggered, which means when the button is clicked, the
 show() function is called.
 
 [Other Common HTML Events](http://www.w3schools.com/js/js_htmldom_events.asp)
-## Resources
-### Bootcamp Content
-* [Slide Deck](https://1drv.ms/p/s!AhUTdgNym7JMjCWPOxc8FrH2PxKV)
-* [Video](https://youtu.be/hDQB0Oum7L4)
-
-### Tools
-* [CodePen](http://codepen.io/pen/) - Experimenting with HTML, CSS and JS snippets.
-
-
-### Extra Learning Resources
-* [HTML (W3 Schools)](http://www.w3schools.com/html/html_intro.asp)
-* [CSS (W3 Schools)](http://www.w3schools.com/css/css_intro.asp)
-* [JS (W3 Schools)](http://www.w3schools.com/js/js_intro.asp)

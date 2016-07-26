@@ -23,8 +23,7 @@ and task runners.
 
 ## Training
 
-### 1. HTML, CSS and JS 
-*documentation in progress*
+### [1. HTML, CSS and JS](1. HTML, CSS and JS)
 * HTML5 concepts (elements, controls, attributes, etc)
 * CSS3 concepts (selectors, classes, inline styles, media queries)
 * JS concepts (basic programming principals, syntax, conventions)
