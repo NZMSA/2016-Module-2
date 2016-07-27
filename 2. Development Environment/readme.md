@@ -18,7 +18,7 @@ To test your website, you will need a web server to host your files. Fortunately
 
 ## Bootcamp Resources
 * Slide Deck: [Download](https://1drv.ms/p/s!AhUTdgNym7JMjCRPvv07X8jIGAV6)
-* Video: Coming soon
+* Video: [YouTube Link](https://www.youtube.com/watch?v=lVXLAiEiqc8)
 
 ## Tutorial 1: Installation
 ### Setting up Visual Studio Code
