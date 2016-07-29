@@ -39,12 +39,12 @@ and task runners.
 *Note we won't actually be using NodeJS or doing any backend development - it is simply for their vastly 
 popular package manager npm*
 
-### 3. Libraries and Frameworks (Frontend)
+### [3. Libraries and Frameworks (Frontend)](3. Libraries and Frameworks)
 *documentation in progress*
 * Bootstrap for responsive front ends
 * jQuery + plugins 
 
-### 4. REST APIs
+### [4. REST APIs](4. REST APIs)
 *documentation in progress*
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)
