@@ -39,7 +39,7 @@ In this section we will be using one of the most popular combination for fronten
 * Implement basic styling with Bootstrap
 
 ## Bootcamp Resources
-* [Slide Deck](link)
+* [Slide Deck](https://1drv.ms/p/s!AsT6-yAlxrN69iE3TlPFv50XSTDO)
 * [Video](link)
 
 ## Prerequisites:
