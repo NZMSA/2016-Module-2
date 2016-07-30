@@ -34,7 +34,7 @@ Application Insights and New Relic are two of the performance monitoring extensi
   2. Click on "Web + Mobile" under the Market Place heading
   3. Click on "Web App"
 
-![New Web App](img/new_web_app.PNG)
+  ![New Web App](img/new_web_app.PNG)
 
   4. Fill out the information about your web app
     - Note you should get a tick next to your "App Service Name"
@@ -42,7 +42,7 @@ Application Insights and New Relic are two of the performance monitoring extensi
   5. For the "Resource Group", select "Use Existing" and choose "Default" option in the dropdown menu
   6. Click on **Create** at the bottom  
 
-![Fill Out](img/fill_out.PNG)
+  ![Fill Out](img/fill_out.PNG)
 
 ##### Azure is now deploying the Web App in the background
 ##### Whilst waiting open the Construct 2 application with the game you would like to deploy
@@ -50,27 +50,27 @@ Application Insights and New Relic are two of the performance monitoring extensi
 ## Setting up continuous deployment
   1. Head back over to your dashboard and find the tile with your App Name and click it.
 
-![Dashboard Tile](img/dashboard_tile.PNG)
+  ![Dashboard Tile](img/dashboard_tile.PNG)
 
   2. Next find settings in the top left 
   3. Click Deployment Source in the publishing group
   4. Click configure required settings in the new menu as shown below
 
-![Deployment Source](img/deployment_source.PNG)
+  ![Deployment Source](img/deployment_source.PNG)
 
   5. Choose GitHub in the menu that shows up  
 
-![Choose GitHub](img/choose_github.PNG)
+  ![Choose GitHub](img/choose_github.PNG)
 
   6. Be sure to authorize GitHub to your account
   7. Choose the project you want to link to this WebApp from your GitHub Repo
   8. Choose the Branch that you want to deploy from
 
-![Choose Project](img/choose_project.PNG)
+  ![Choose Project](img/choose_project.PNG)
 
   9. Go ahead and click "OK"
 
-![GitHub Active](img/github_active.PNG)
+  ![GitHub Active](img/github_active.PNG)
 
 ## Browsing your WebApp
 
