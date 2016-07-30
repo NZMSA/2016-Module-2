@@ -289,6 +289,9 @@ Thats its! Thats the entire process!
 
 As you can see the API call itself isn't too tricky and isn't too much code. You can also see a lot of your time will be spent getting your data you need to send, and then transforming the data you receive from your API to the needs of your user.
 
+## Completed Example
+For reference, the complete solution to this demo has provided and can be found [here](demo-complete). You will need to clone or download this whole repository as a zip and open the demo-complete folder using Visual Studio Code. To run, just use the standard `browser-sync start --server --files "**/*"` command.
+
 ## Extra for Experts
 
 Is it always this simple? Yes!... and no.

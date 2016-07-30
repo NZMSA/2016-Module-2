@@ -85,6 +85,10 @@ Open up the `index.html` file and paste this code:
 <html>
     <head>
         <title>Moodify</title>
+        <!--Boostrap's CSS-->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
     <body>
         <div class="container" id="page-container">
@@ -111,10 +115,12 @@ Open up the `index.html` file and paste this code:
 
             Alternatively can use CDNs for bootstrap/jquery
         -->
-        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!--jQuery Script-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Bootstrap Script-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--Custom Script-->
         <script src="./js/basic.js"></script>
     </body>
 </html>
@@ -156,6 +162,14 @@ h1#app-name {
 
 button#refreshbtn {
     display:none;
+}
+
+img#selected-img{
+    width:150px;
+    height:150px;
+    padding:20px;
+    display:none;
+    margin: 0 auto;
 }
 
 h2#page-header {
@@ -245,6 +259,9 @@ browser-sync start --server --files "**/*"
 We call the browser-sync global module and start a server that watches all files and subdirectories (`**/*` compared to just `*`)
 
 Congratulations, you have setup your very own modern website with jQuery and Bootstrap!
+
+### Completed Example
+For reference, the complete solution to this demo has provided and can be found [here](demo-complete). You will need to clone or download this whole repository as a zip and open the demo-complete folder using Visual Studio Code. To run, just use the standard `browser-sync start --server --files "**/*"` command.
 
 ## Extra Learning Resources
 jQuery:
