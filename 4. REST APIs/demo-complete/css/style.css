@@ -19,6 +19,14 @@ button#refreshbtn {
     display:none;
 }
 
+img#selected-img{
+    width:150px;
+    height:150px;
+    padding:20px;
+    display:none;
+    margin: 0 auto;
+}
+
 h2#page-header {
     padding-top:20px;
     padding-bottom:20px;

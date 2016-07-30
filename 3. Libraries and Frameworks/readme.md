@@ -85,6 +85,10 @@ Open up the `index.html` file and paste this code:
 <html>
     <head>
         <title>Moodify</title>
+        <!--Boostrap's CSS-->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
     <body>
         <div class="container" id="page-container">
@@ -111,10 +115,12 @@ Open up the `index.html` file and paste this code:
 
             Alternatively can use CDNs for bootstrap/jquery
         -->
-        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!--jQuery Script-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Bootstrap Script-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--Custom Script-->
         <script src="./js/basic.js"></script>
     </body>
 </html>
@@ -156,6 +162,14 @@ h1#app-name {
 
 button#refreshbtn {
     display:none;
+}
+
+img#selected-img{
+    width:150px;
+    height:150px;
+    padding:20px;
+    display:none;
+    margin: 0 auto;
 }
 
 h2#page-header {

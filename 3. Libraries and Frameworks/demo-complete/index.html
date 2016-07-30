@@ -2,6 +2,10 @@
 <html>
     <head>
         <title>Moodify</title>
+        <!--Boostrap's CSS-->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
     <body>
         <div class="container" id="page-container">
@@ -13,6 +17,7 @@
             <h2 id="page-header">
                 Get song recommendations based on your mood.
             </h2>
+            <img id="selected-img" src="">
             <div class="btn-wrapper">
                 <label class="btn btn-info" for="my-file-selector">
                     <input id="my-file-selector" type="file">
@@ -28,10 +33,12 @@
 
             Alternatively can use CDNs for bootstrap/jquery
         -->
-        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!--jQuery Script-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Bootstrap Script-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--Custom Script-->
         <script src="./js/basic.js"></script>
     </body>
 </html>
