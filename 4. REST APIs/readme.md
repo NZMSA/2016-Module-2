@@ -217,8 +217,10 @@ Lets check out that code now!
                 pageheader.innerHTML = "Hmm, we can't detect a human face in that photo. Try another?"; //No face? Good to let your user know they done-goofed.
             }
         })
-        ```
-        After looking at the code above you might wonder why did I use let, rather than var? Var scopes out the entire function, while let scopes out just that block. Meh.
+```
+
+After looking at the code above you might wonder why did I use let, rather than var? Var scopes out the entire function, while let scopes out just that block. Meh.
+        
 
 ####3. Error Handling
 
