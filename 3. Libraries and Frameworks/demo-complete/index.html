@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Moodify</title>
+    </head>
+    <body>
+        <div class="container" id="page-container">
+            <h1 id="app-name">
+                <span class="glyphicon glyphicon-headphones"></span> moodify
+            </h1>
+            <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
+
+            <h2 id="page-header">
+                Get song recommendations based on your mood.
+            </h2>
+            <div class="btn-wrapper">
+                <label class="btn btn-info" for="my-file-selector">
+                    <input id="my-file-selector" type="file">
+                    Upload a picture of you
+                </label>
+                <button type="button" class="btn btn-info" id="refreshbtn">Another song please</button>
+            </div>
+        </div>
+        <!-- 
+            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
+            will sort that in later bootcamps with task-runners and the like.
+            For now this is just a demonstration.
+
+            Alternatively can use CDNs for bootstrap/jquery
+        -->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./js/basic.js"></script>
+    </body>
+</html>

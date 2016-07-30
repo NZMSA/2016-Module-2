@@ -44,7 +44,7 @@ popular package manager npm*
 * Bootstrap for responsive front ends
 * jQuery + plugins 
 
-### 4. REST APIs
+### [4. REST APIs](4. REST APIs)
 *documentation in progress*
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)

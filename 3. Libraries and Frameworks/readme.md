@@ -246,6 +246,9 @@ We call the browser-sync global module and start a server that watches all files
 
 Congratulations, you have setup your very own modern website with jQuery and Bootstrap!
 
+### Completed Example
+For reference, the complete solution to this demo has provided and can be found [here](demo-complete). You will need to clone or download this whole repository as a zip and open the demo-complete folder using Visual Studio Code. To run, just use the standard `browser-sync start --server --files "**/*"` command.
+
 ## Extra Learning Resources
 jQuery:
 * [w3schools tutorials](http://www.w3schools.com/jquery/default.asp)
