@@ -30,7 +30,7 @@ Asynchronous JavaScript and XML. Allows webpages to dynamically request data (an
 
 
 ## Bootcamp Resources
-- Slide Deck: [Download](https://1drv.ms/p/s!AhUTdgNym7JMjCi5O9hj-jo43KRv)
+- Slide Deck: [Download](https://1drv.ms/p/s!AhUTdgNym7JMjCogDG612PQ7cFcf)
 
 ## Before you Code!
 Before we begin even coding, its a good idea to check out the API documentation and sign-up for the service if authentication is required by the API.
