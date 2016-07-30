@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moodify</title>
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+        html {
+            background: url("http://theme.dima-lab.com/okab/images/landing-page-iphone/blurred-home-bg.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        body {
+            color: white;
+            background-color: transparent;
+        }
+        
+        h1#app-name {
+            font-size: 84px;
+        }
+        
+        button#refreshbtn {
+            display: none;
+        }
+        
+        h2#page-header {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        body #page-container {
+            margin-top: 150px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .btn-wrapper {
+            padding: 20px 0;
+        }
+        
+        input#my-file-selector {
+            display: none;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container" id="page-container">
+        <h1 id="app-name">
+                <span class="glyphicon glyphicon-headphones"></span> moodify
+            </h1>
+        <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
+
+        <h2 id="page-header">
+                Get song recommendations based on your mood.
+            </h2>
+        <div class="btn-wrapper">
+            <label class="btn btn-info" for="my-file-selector">
+                    <input id="my-file-selector" type="file">
+                    Upload a picture of you
+                </label>
+            <button type="button" class="btn btn-info" id="refreshbtn">Another song please</button>
+        </div>
+    </div>
+    <!-- 
+            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
+            will sort that in later bootcamps with task-runners and the like.
+            For now this is just a demonstration.
+
+            Alternatively can use CDNs for bootstrap/jquery
+        -->
+<script>
+        // Get jquery objects from DOM
+        var imgSelector = $("#my-file-selector");
+        var refreshbtn = $("#refreshbtn");
+        var pageheader = $("#page-header");
+        var pagecontainer = $("#page-container");
+
+        // Register event listeners
+        imgSelector.on("change", function() {
+            pageheader.html("Just a sec while we analyse your mood...");
+            setTimeout(changeUI, 2000); //some external call would happen here, add 2 sec delay to simulate
+            //can implement jquery loading plugin
+        });
+        refreshbtn.on("click", function() {
+            // Load random song based on mood
+            alert("You clicked the button"); //can demo with sweetAlert plugin
+        });
+
+        // Manipulate the DOM
+        function changeUI() {
+            //Show detected mood
+            pageheader.html("Your mood is: ...");
+
+            //Display song refresh button
+            refreshbtn.css("display", "inline");
+
+            //Remove offset at the top
+            pagecontainer.css("marginTop", "20px");
+        };
+    </script>
+</body>
+
+</html>
