@@ -42,12 +42,106 @@ numbr = -1; // undefined
 
 ### Installation of TypeScript
 If you haven't already got TypeScript installed, please refer back to [2. Development Environment](https://github.com/NZMSA/2016-Module-2/tree/master/2.%20Development%20Environment) under Tutorial 1, Setting up TypeScript.
+Please also ensure you have your code up to date from the before module [4. REST APIs](https://github.com/NZMSA/2016-Module-2/tree/master/4.%20REST%20APIs)
 
 ## Tutorial 1: Basics of TypeScript
 
+### Types
+
+With TypeScript we can now give variables types, so that we can avoid passing the wrong type and record the intended type.
+```
+var isDone: boolean = false;
+var count: number = 42;
+var name: string = "Deep Sea Dive";
+```
+
+If we do not the type we can assign it to "any", this can happen when getting dynamic content. This also allows us to still work with any existing JavaScript.
+```
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; 
+```
+
+And if your not familar there is the type "void" which means nothing. This is good when functions do not return anything and just do something.
+```
+function warnUser(): void {
+    alert("This is my warning message");
+}
+```
+
+In this sample giving the function of type non-String will cause an error when trying to compile to JavaScript
+```
+function greeter(person: string) {
+    return "Hello, " + person;
+}
+
+var user = [0, 1, 2];
+
+document.body.innerHTML = greeter(user); 
+```
+Look out for the errors, as the JavaScript file will still be created but in this case TypeScript will warn you.
+```
+greeter.ts(7,26): Supplied parameters do not match any signature of call target
+```
+
+### Interfaces
+If you dont know what an interface is, it is basically a structural type that can have properties/fields (firstName, lastName) and can have methods.
+In TypeScript, two types are compatiable if their internal structure is compatiable. This allows us to implement an interface just by having the shape the interface requires, without an explicit implements clause.
+
+```
+interface Person {
+    firstName: string;
+    lastName: string;
+    sayHello(): void;
+}
+
+function greeter(person: Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+var user = { firstName: "Jane", lastName: "User" };
+
+document.body.innerHTML = greeter(user);
+```
+
+### Classes
+TypeScript supports class-based object oriented programming. Unlike interfaces these are concrete and can be instantiated to form "objects" while interfaces cannot be.
+```
+class Greeter {
+    greeting: string;
+    constructor(message: string) {
+        this.greeting = message;
+    }
+    greet() {
+        return "Hello, " + this.greeting;
+    }
+}
+
+var greeter = new Greeter("world");
+```
+We can then call the method greet() onto our greeter object.
+```
+var message: string = greeter.greet();
+```
+
+Of course, one of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In this example it is done by extends, we can also utilize inheritance by implemnting an interface.
+```
+class Animal {
+    name: string;
+    constructor(theName: string) { this.name = theName; }
+}
+
+class Rhino extends Animal {
+    constructor() { super("Rhino"); }
+}
+```
+
+super() is used when we want to call the parent's class method instead. Here we called Animal's constructor inside of the Rhino's constructor.
+
+
 ## Tutorial 2: Compilation of TypeScript to JavaScript
 
-1. Create a tsconfig.json file
+### 1. Create a tsconfig.json file
 This defines the TypeScript project settings such as the compiler options and the files that should be included.
 
 File --> New File --> tsconfig.json
@@ -66,11 +160,7 @@ Our tsconfig.json file will look like this,
 
 Now when you create a .ts file as part of the project we will offer up rich editing experiences and syntax validation.
 
-* target,  
-* module,
-* sourceMap, 
-
-2. Compile TypeScript to JavaScript
+### 2. Compile TypeScript to JavaScript
 
 For demonstration purpose we will just have a simple TypeScript file, HelloPerson.ts
 ```
@@ -92,7 +182,7 @@ This will generate the file HelloPerson.js.
 
 It is obvious this can be quite tedious so
 
-3. Creating a task to compile TypeScript files to JavaScript
+### 3. Creating a task to compile TypeScript files to JavaScript
 
 Open Command Palette with Ctrl+Shift+P
 
@@ -120,7 +210,7 @@ Select TypeScript - tsconfig.json. This will create a tasks.json file in the wor
 
 This is just running "tsc" on our files. 
 
-4. To run the build task
+### 4. To run the build task
 To test our task is running, first delete the HelloPerson.js generated from step 2.
 
 As this is the only task in the file, you can execute it by simply pressing Ctrl+Shift+B (Run Build Task). At this point you will see an additional file show up in the file list HelloPerson.js.
@@ -148,10 +238,10 @@ For example this line of code in typescript will cause an error. (Our intellisen
 
 ```
 
-To review a reason why a build:
+To review a reason why a build may have failed:
 
-1. This would show up in the output window (which can be opened using Ctrl+Shift+U) and selecting Tasks in the output view dropdown.
-2. You can click on the icon below to get a list of the problems and navigate to them.
+* This would show up in the output window (which can be opened using Ctrl+Shift+U) and selecting Tasks in the output view dropdown.
+* You can click on the icon below to get a list of the problems and navigate to them.
 
 <PICTURE>
 
