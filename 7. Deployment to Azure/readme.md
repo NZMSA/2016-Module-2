@@ -70,7 +70,7 @@ This tutorial also shows you how to configure a continous deployment workflow fo
 
 ![Choose Project](img/choose_project.png)
 
-  9. Go ahead and click "OK"
+  9. Go ahead and click **OK**
 
 ![GitHub Active](img/github_active.png)
 
