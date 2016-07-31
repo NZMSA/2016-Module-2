@@ -48,7 +48,7 @@ Application Insights and New Relic are two of the performance monitoring extensi
 
 ![monitor](img/monitor_and_diagnose.png) 
 
-  6. Paste the following code into your index.html (master page)
+  6. Paste the code from your azure portal into your index.html (master page), similar to that below but with your unique **instrumentationKey**
 
   ```html
   <!-- 
