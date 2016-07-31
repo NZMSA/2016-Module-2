@@ -30,56 +30,45 @@ Application Insights and New Relic are two of the performance monitoring extensi
   2. Go to [portal.azure.com](portal.azure.com)
   3. Log in with the credentials that you activated your dream spark account with
 
-## Creating a new Web App
-  1. Click on "New" in the top left corner of the portals home page
-  2. Click on "Web + Mobile" under the Market Place heading
-  3. Click on "Web App"
+## Setting up Application Insights
+  1. Find **All resources** on the left
 
-![New Web App](img/new_web_app.png)
+![All Resources](img/all_resources.png)
 
-  4. Fill out the information about your web app
-    - Note you should get a tick next to your "App Service Name"
-    - To access the website once completed you will go to yourWebAppsName.azurewebsites.net
-  5. For the "Resource Group", select "Use Existing" and choose "Default" option in the dropdown menu
-  6. Click on **Create** at the bottom  
+  2. Find your App Name with the type Application Insights and click it
 
-![Fill Out](img/fill_out.png)
+![App Type](img/type_app_insights.png)
 
-##### Azure is now deploying the Web App in the background
-##### Whilst waiting open the Construct 2 application with the game you would like to deploy
+  3. Next click settings
 
-## Setting up continuous deployment
-  1. Head back over to your dashboard and find the tile with your App Name and click it.
+![Settings](img/settings.png)
 
-![Dashboard Tile](img/dashboard_tile.png)
+  4. Find **Getting started** under the **CONFIGURE** group
+  5. Click **MONITOR AND DIAGNOSE CLIENT SIDE APPLICATION**
 
-  2. Next find settings in the top left 
-  3. Click Deployment Source in the publishing group
-  4. Click configure required settings in the new menu as shown below
+![monitor](img/monitor_and_diagnose.png) 
 
-![Deployment Source](img/deployment_source.PNG)
+  6. Paste the following code into your index.html (master page)
 
-  5. Choose GitHub in the menu that shows up  
+  ```html
+  <!-- 
+To collect end-user usage analytics about your application, 
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear 
+automatically in just a few seconds.
+-->
+<script type="text/javascript">
+  var appInsights=window.appInsights||function(config){
+    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+    }({
+        instrumentationKey:"XXXXX-XXXXX-XXXXX-XXXX-XXXXX"
+    });
+       
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
+</script>
+```
 
-![Choose GitHub](img/choose_github.png)
 
-  6. Be sure to authorize GitHub to your account
-  7. Choose the project you want to link to this WebApp from your GitHub Repo
-  8. Choose the Branch that you want to deploy from
-
-![Choose Project](img/choose_project.png)
-
-  9. Go ahead and click "OK"
-
-![GitHub Active](img/github_active.png)
-
-## Browsing your WebApp
-
-Now it is time to test your site.
-
-Click **Browse** as shown in the figure below, this will open up a new tab which will allow you to share this link with friends and family and let them enjoy your Web App as well.
-
-![Browse](img/browse.png)
-
-#### Congratulation you have successfully created a Web App and published it to Azure
-#### Any changes you push to the connected GitHub repo will now automatically get published to the link you have created "yourWebAppName.azurewebsites.net"
+#### Congratulations you have successfully integrated Application insights into your Web Application 
