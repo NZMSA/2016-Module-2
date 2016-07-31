@@ -1,15 +1,14 @@
 # 7. Deployment to Azure
 ## Introduction
-In App Service, a web app is the compute resources that Azure provides for hosting a website or web application.
+In the Azure Portal you can set up monitoring to collect the statistics and details on the application dependencies in your Azure web apps or virtual machines.
 
-The compute resources may be on shared or dedicated virtual machines (VMs), depending on the pricing tier that you choose. Your application code runs in a managed VM that is isolated from other customers.
+Azure supports Application Performance Monitoring (APM) by leveraging extensions. These extensions are installed into your application and collect the data and report back to the monitoring services.
 
-Your code can be in any language or framework that is supported by Azure App Service, such as ASP.NET, Node.js, Java, PHP, or Python. You can also run scripts that use PowerShell and other scripting languages in a web app.
-
-This tutorial also shows you how to configure a continous deployment workflow for your Azure App Service app. App Service integration with BitBucket, GitHub, and Visual Studio Team Services (VSTS) enables a continuous deployment workflow where Azure pulls in the most recent updates from your project published to one of these services. Continuous deployment is a great option for projects where multiple and frequent contributions are being integrated.
+Application Insights and New Relic are two of the performance monitoring extensions that are available. To use them, you install an agent at runtime. With Application Insights, there's also the option to build your code with an SDK. The SDK lets you write code to monitor the usage and performance of your app in more detail.
 
 ## Learning Outcomes
-* Publish your local code using continuous deployment to a web app with a unique URL that allows you to easily share it with friends and family
+* Be able to implement application in your Web Application 
+* Learn about why analytics information is useful to you, as a developer
 
 ## Resources
 
@@ -18,9 +17,9 @@ This tutorial also shows you how to configure a continous deployment workflow fo
 * [Azure Portal](portal.azure.com) - Used to create web app 
 
 ### Extra Learning Resources
-* [Web Apps overview](https://azure.microsoft.com/en-in/documentation/articles/app-service-web-overview/)
-* [Deploy your first web app to Azure in 5 minutes](https://azure.microsoft.com/en-in/documentation/articles/app-service-web-get-started/)
-* [Continuous Deployment to Azure App Service](https://azure.microsoft.com/en-in/documentation/articles/app-service-continous-deployment/)
+* [Application Insights Animated Introduction)](https://www.youtube.com/watch?v=fX2NtGrh-Y0)
+* [Application Insights for web pages](https://azure.microsoft.com/en-gb/documentation/articles/app-insights-javascript/)
+* [Application Insights - introduction)](https://azure.microsoft.com/en-us/documentation/articles/app-insights-overview/)
 
 # Publishing as a Web Application
 
