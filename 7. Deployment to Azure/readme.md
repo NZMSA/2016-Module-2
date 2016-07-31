@@ -82,5 +82,5 @@ Click **Browse** as shown in the figure below, this will open up a new tab which
 
 ![Browse](img/browse.png)
 
-#### Congratulation you have successfully created a Web App and published it to Azure
+#### Congratulations you have successfully created a Web App and published it to Azure
 #### Any changes you push to the connected GitHub repo will now automatically get published to the link you have created "yourWebAppName.azurewebsites.net"
