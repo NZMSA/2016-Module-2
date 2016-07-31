@@ -17,9 +17,9 @@ Application Insights and New Relic are two of the performance monitoring extensi
 * [Azure Portal](portal.azure.com) - Used to create web app 
 
 ### Extra Learning Resources
-* [Application Insights Animated Introduction)](https://www.youtube.com/watch?v=fX2NtGrh-Y0)
+* [Application Insights Animated Introduction](https://www.youtube.com/watch?v=fX2NtGrh-Y0)
 * [Application Insights for web pages](https://azure.microsoft.com/en-gb/documentation/articles/app-insights-javascript/)
-* [Application Insights - introduction)](https://azure.microsoft.com/en-us/documentation/articles/app-insights-overview/)
+* [Application Insights - introduction](https://azure.microsoft.com/en-us/documentation/articles/app-insights-overview/)
 
 # Publishing as a Web Application
 
