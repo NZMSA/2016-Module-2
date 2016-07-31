@@ -58,7 +58,7 @@ This tutorial also shows you how to configure a continous deployment workflow fo
   3. Click Deployment Source in the publishing group
   4. Click configure required settings in the new menu as shown below
 
-![Deployment Source](img/deployment_source.PNG)
+![Deployment Source](img/deployment_source.png)
 
   5. Choose GitHub in the menu that shows up  
 
