@@ -1,6 +1,6 @@
-# 1. 5. TypeScript
+# 1. 5. TypeScript [WIP]
 ## Introduction
-Up til now you have been developing in JavaScript to get an understanding on web development. We want to introduce you guys to TypeScript. We believe it would help with a lot of common errors that can arise from developing in JavaScript. Those familiar with typed languages like Java, C# will have your classes back.
+Uptil now you have been developing in JavaScript to get an understanding on web development. We want to introduce you guys to TypeScript. We believe it would help with a lot of common errors that can arise from developing in JavaScript. Those familiar with typed languages like Java, C# will have your classes back.
 
 TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. (Superset means it behaves just like JavaScript but with extra stuff) TypeScript follows similar syntax to JavaScript with the introduction of static checking and code refactoring. You basically write in TypeScript but whats actually being run in is the generated JavaScript. This JavaScript can then still be run on any browser. 
 
@@ -10,12 +10,12 @@ For this course, we will be going over the basics of TypeScript, converting our 
 
 ### Disadvantages of JavaScript
 * No type checking, is dynamically checked at runtime
-```
+```TypeScript
 var number = 10.2;
 number = "String value";
 ```
 * No intellisense [Need to confirm]
-```
+```TypeScript
 var number = 10.2;
 numbr = -1; // undefined
 ```
@@ -49,28 +49,28 @@ Please also ensure you have your code up to date from the before module [4. REST
 ### Types
 
 With TypeScript we can now give variables types, so that we can avoid passing the wrong type and record the intended type.
-```
+```TypeScript
 var isDone: boolean = false;
 var count: number = 42;
 var name: string = "Deep Sea Dive";
 ```
 
 If we do not the type we can assign it to `any`, this can happen when getting dynamic content. This also allows us to still work with any existing JavaScript.
-```
+```TypeScript
 let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false; 
 ```
 
 And if your not familar there is the type `void` which means nothing. This is good when functions do not return anything and just do something.
-```
+```TypeScript
 function warnUser(): void {
     alert("This is my warning message");
 }
 ```
 
 In this sample giving the function of type non-String will cause an error when trying to compile to JavaScript
-```
+```TypeScript
 function greeter(person: string) {
     return "Hello, " + person;
 }
@@ -80,7 +80,7 @@ var user = [0, 1, 2];
 document.body.innerHTML = greeter(user); 
 ```
 Look out for the errors, as the JavaScript file will still be created but in this case TypeScript will warn you.
-```
+```TypeScript
 greeter.ts(7,26): Supplied parameters do not match any signature of call target
 ```
 
@@ -88,7 +88,7 @@ greeter.ts(7,26): Supplied parameters do not match any signature of call target
 If you dont know what an interface is, it is basically a structural type that can have properties/fields (`firstName`, `lastName`) and can have methods (`sayHello`).
 In TypeScript, two types are compatiable if their internal structure is compatiable. This allows us to implement an interface just by having the shape the interface requires, without an explicit implements clause.
 
-```
+```TypeScript
 interface Person {
     firstName: string;
     lastName: string;
@@ -106,7 +106,7 @@ document.body.innerHTML = greeter(user);
 
 ### Classes
 TypeScript supports class-based object oriented programming. Unlike interfaces these are concrete and can be instantiated to form "objects" while interfaces cannot be.
-```
+```TypeScript
 class Greeter {
     greeting: string;
     constructor(message: string) {
@@ -120,12 +120,12 @@ class Greeter {
 var greeter = new Greeter("world");
 ```
 We can then call the method `greet()` onto our `greeter` object.
-```
+```TypeScript
 var message: string = greeter.greet();
 ```
 
 Of course, one of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In this example it is done by extends, we can also utilize inheritance by implemnting an interface.
-```
+```TypeScript
 class Animal {
     name: string;
     constructor(theName: string) { this.name = theName; }
@@ -148,7 +148,7 @@ This defines the TypeScript project settings such as the compiler options and th
 
 
 Our `tsconfig.json` file will look like this,
-```
+```json
 {
     "compilerOptions": {
         "target": "es5",
@@ -163,7 +163,7 @@ Now when you create a .ts file as part of the project we will offer up rich edit
 ### 2. Compile TypeScript to JavaScript
 
 For demonstration purpose we will just have a simple TypeScript file, `helloPerson.ts`
-```
+```TypeScript
 function greeter(person: string) {
     return "Hello, " + person;
 }
@@ -191,7 +191,7 @@ This shows a list of templates for tasks you can choose from.
 
 Select `TypeScript - tsconfig.json`. This will create a `tasks.json` file in the workspace .vscode folder.
 
-```
+```json
 {
     // See http://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
@@ -239,18 +239,20 @@ To review a reason why a build may have failed:
 * This would show up in the output window (which can be opened using `Ctrl+Shift+U`) and selecting Tasks in the output view dropdown.
 * You can click on the icon below to get a list of the problems and navigate to them.
 
-<PICTURE>
-
-
 ## Tutorial 5: Converting our JavaScript to TypeScript
 Dump and explain differences. dont need to go line by line
 
 ## Tutorial 5: Involving soundcloud
 
-We'll create a new file called `musichandler.ts`
+We'll create a new file called `musichandler.ts` this will also reference our new `moodhandler.ts`
+
+At the top of the file add the following line so we can use the `Mood` class
+```TypeScript
+import * as mood from "./moodhandler";
+```
 ### 1. Adding Song Class
 In this file, we'll add a `Song` class to store information about the songs we will play on soundcloud.
-```
+```TypeScript
 class Song {
     title: string;
     url: string;
@@ -262,7 +264,7 @@ class Song {
 ```
 ### 2. Adding Playlist Class
 We will also add a Playlist class to the same file. This will hold a collection of songs for each different mood. From this playlist we can then grab a random song depending on the `mood` given
-```
+```TypeScript
 export class Playlist {
     happy: Song[];
     sad: Song[];
@@ -299,8 +301,8 @@ In this case an `export` tag is added as we want to use this class outside this 
 
 ### 3. Initializing playlist with songs. 
 
-We then create a `playlist` object and populate it with various songs for different modes.
-```
+We then create a `playlist` object and populate it with various songs for different modes. Add this to  `musichandler.ts` file. 
+```TypeScript
 var myPlaylist : Playlist = new Playlist();
 
 export function init() : void {
@@ -315,15 +317,16 @@ export function init() : void {
     myPlaylist.addSong("angry", new Song("When they come for me", "https://soundcloud.com/heoborus/when-they-come-for-me-linkin-park"));
     myPlaylist.addSong("angry", new Song("One Step Closer", "https://soundcloud.com/user1512165/linkin-park-one-step-closer"));
     myPlaylist.addSong("angry", new Song("Somewhere I belong", "https://soundcloud.com/mandylinkinparkmusic2xd/somewhere-i-belong"));
+
     // init soundcloud
     initSC();
 }
 ```
 
-### 4. 
-Given our mode we can then display the song and then use soundcloud to play the song
-```
-export function loadSong(currentMood : string) : void {
+### 4. Choose song to play based on moode
+Given our mode we can then display the song and then use soundcloud to play the song, we add the following to `musichandler.ts` file
+```TypeScript
+export function loadSong(currentMood : mood.Mood) : void {
     var songSelected : Song = myPlaylist.getRandSong(currentMood.name);
     var track_url : string = songSelected.url;
 
@@ -334,17 +337,32 @@ export function loadSong(currentMood : string) : void {
     loadPlayer(track_url);
 }
 ```
-### 4. Setting up soundcloud and using the player
+### 5. Setting up SoundCloud and using the player
 
+In order to use SoundCloud we need to register and get an API key. To do so follow [SoundCloud's Register a new app](http://soundcloud.com/you/apps/new). 
+
+<picture>
+
+Add the SoundCloud JavaScript reference to your `index.html` file
+```TypeScript
+<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 ```
+
+We then create a function to instantiate our SoundCloud connection in our `musichandler.ts` file. (This is called when we instantiate our playlist)
+```TypeScript
 var myClientId = "*****PUT YOUR SOUND CLOUD ID HERE****";
 
 function initSC() {
-    // init soundcloud
+    // init SoundCloud
     SC.initialize({
         client_id: myClientId
     });
 }
+```
+Here `SC` is from the SoundCloud JavaScript file. 
+We then want to embed the SoundCloud player in a div named `musicplayer` in our html page. Add the following function to  our `musichandler.ts` file. (We will call this later)
+
+```TypeScript
 function loadPlayer(trackurl : string) {
     SC.oEmbed(trackurl, { auto_play: true }).then(function (oEmbed) {
         let div = document.getElementById("musicplayer");
@@ -353,11 +371,63 @@ function loadPlayer(trackurl : string) {
 }
 ```
 
-- Soundcloud, :D stuff - after khoda
+For further documentation about sound cloud please refer to their [API documentation](https://developers.soundcloud.com/docs/api/guide)
+
+### 6. Changing code to utilize our new musichandler
+
+#### 1. Import musichandler
+In `basic.js` add the following at the top of the file
+```TypeScript
+import * as music from "./musichandler";
+
+// Initialise playlist and soundcloud
+music.init();
+
+let currentMood: mood.Mood;???
+```
+
+By importing the file this will allow ourselves to use functions and classes from musichandler.
+Remember when we said we'd be calling `init()` from musichandler.ts later, well here it is!
+
+#### 2. Invoke load song
+Before our code didnt really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function from `musichandler.ts`
+
+Replace the inside of `refreshbtn.on("click", function () {` inside `basic.js` from doing nothing (giving an alert) to loading a song
+
+```TypeScript
+    // Load random song based on mood
+    music.loadSong(currentMood);
+```
+#### 3. Add div to hold our SoundCloud player
+
+Add the following after `<div class="btn-wrapper"> ... </div`, so we can have our songs play depending on the mode. (Provided by our `loadPlayer()` function in `musichandler.ts`)
+
+```html
+<div id="musicplayer"></div>
+```
+#### 3. Add some styling
+
+Add the following to your `style.css` just so that nothing is there when we first open our website
+```css
+#musicplayer{
+    padding:20px;
+    display:none;
+}
+
+#track-name {
+    display:none;
+}
+```
+### 7. Test our new website
+Now once all these changes have been made, we should be done! Once uploading a picture to determine our mode our website should look like this and play a song based on our mood.
+<PICTURE>
+
+Feel free to play around and add your songs to the list.
 
 ### Tools
 * [CodePen](http://codepen.io) - Experimenting with HTML, CSS and JS snippets. 
 
 ### Extra Learning Resources
 * [TypeScript](https://www.typescriptlang.org/)
+* [SoundCloud](https://developers.soundcloud.com/docs/api/guide)
 
