@@ -85,7 +85,7 @@ greeter.ts(7,26): Supplied parameters do not match any signature of call target
 ```
 
 ### Interfaces
-If you dont know what an interface is, it is basically a structural type that can have properties/fields (`firstName`, `lastName`) and can have methods (`sayHello`).
+If you dont know what an interface is, it is basically a structural type that can have properties/fields (`firstName`, `lastName`) and can have methods (`sayHello()`).
 In TypeScript, two types are compatiable if their internal structure is compatiable. This allows us to implement an interface just by having the shape the interface requires, without an explicit implements clause.
 
 ```TypeScript
@@ -191,7 +191,7 @@ This shows a list of templates for tasks you can choose from.
 
 Select `TypeScript - tsconfig.json`. This will create a `tasks.json` file in the workspace .vscode folder.
 
-```json
+```
 {
     // See http://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
@@ -226,12 +226,12 @@ tsc *.ts --watch
 
 This is going to monitor the folder for any changes in our TypeScript files and compile them behind the scenes.
 
-## Tutorial 4: Reviewing Build Issues
+## Reviewing Build Issues
 Sometimes builds don't go that smoothly
 
 For example this line of code in typescript will cause an error. (Our intellisense should tell us this!)
 ```
-
+HelloWorld.ts(3,17): error TS2339: Property 'logg' does not exist on type 'Console'.
 ```
 
 To review a reason why a build may have failed:
@@ -552,22 +552,14 @@ Replace the inside of `refreshbtn.on("click", function () {` inside `main.ts` fr
     music.loadSong(currentMood);
 ```
 
-#### 3. Invoke load song
-
-```TypeScript
-    //Display song refresh button
-    refreshbtn.style.display = "inline";
-    //Remove offset at the top
-    pagecontainer.style.marginTop = "20px";
-```
-#### 4. Add div to hold our SoundCloud player
+#### 3. Add div to hold our SoundCloud player
 
 Add the following after `<div class="btn-wrapper"> ... </div`, so we can have our songs play depending on the mode. (Provided by our `loadPlayer()` function in `musichandler.ts`)
 
 ```html
 <div id="musicplayer"></div>
 ```
-#### 5. Add some styling
+#### 4. Add some styling
 
 Add the following to your `style.css` just so that nothing is there when we first open our website
 ```css
@@ -587,10 +579,15 @@ Now once all these changes have been made, we should be done! Once uploading a p
 
 Feel free to play around and add your songs to the list.
 
+
+## Completed Example
+For reference, the complete solution to this demo has provided and can be found [here](demo-complete). You will need to clone or download this whole repository as a zip and open the demo-complete folder using Visual Studio Code. To run, just use the standard `browser-sync start --server --files "**/*"` command.
+
 ### Tools
 * [CodePen](http://codepen.io) - Experimenting with HTML, CSS and JS snippets. 
+* [TypeScript Playground](https://www.typescriptlang.org/play/) - Experimenting with TS to JS
 
 ### Extra Learning Resources
 * [TypeScript](https://www.typescriptlang.org/)
-* [SoundCloud](https://developers.soundcloud.com/docs/api/guide)
+* [SoundCloud API](https://developers.soundcloud.com/docs/api/guide)
 
