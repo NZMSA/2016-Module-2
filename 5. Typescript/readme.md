@@ -240,16 +240,162 @@ To review a reason why a build may have failed:
 * You can click on the icon below to get a list of the problems and navigate to them.
 
 ## Tutorial 5: Converting our JavaScript to TypeScript
-Dump and explain differences. dont need to go line by line
+Lets tidy up our code bit while we convert our current code to TypeScript. 
+
+### 1. MoodHandler file
+Create a new file called `moodhandler.ts` in our `js` folder, this will look after our mood related functionality and hold a `Mood` class
+```TypeScript
+//Creating a Mood object which has the mood as a string and its corresponding emoji
+export class Mood {
+    name: string;
+    emoji: string;
+    constructor(public mood, public emojiurl) {
+        this.name = mood;
+        this.emoji = emojiurl;
+    }
+}
+
+
+var happy : Mood = new Mood("happy", "http://emojipedia-us.s3.amazonaws.com/cache/a0/38/a038e6d3f342253c5ea3c057fe37b41f.png");
+var sad : Mood  = new Mood("sad", "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji.png?9898922749706957214");
+var angry : Mood = new Mood("angry", "https://cdn.shopify.com/s/files/1/1061/1924/files/Very_Angry_Emoji.png?9898922749706957214");
+var neutral : Mood  = new Mood("neutral", "https://cdn.shopify.com/s/files/1/1061/1924/files/Neutral_Face_Emoji.png?9898922749706957214");
+
+
+export function getCurrMood(scores : number) : Mood {
+    let currentMood: Mood;
+    // In a practical sense, you would find the max emotion out of all the emotions provided. However we'll do the below just for simplicity's sake :P
+    if (scores.happiness > 0.4) {
+        currentMood = happy;
+    } else if (scores.sadness > 0.4) {
+        currentMood = sad;
+    } else if (scores.anger > 0.4) {
+        currentMood = angry;
+    } else {
+        currentMood = neutral;
+    }
+    return currentMood;
+}
+```
+This is just like our JavaScript from before in `basic.js` however we have introduced Mood as a class and able to type check our functions and characters. If by accident we try 
+```TypeScript
+getCurrMood("hello")
+```
+This time, we'd get an error when we try to compile to `.js`
+### 2. Main file from basic
+Lets create a new file called `main.ts` in our `js` folder, this will replace our original `basic.js` so we dont get confused.
+
+```TypeScript
+import * as mood from "./moodhandler";
+
+var currentMood: mood.Mood;
+
+// Get elements from DOM
+var pageheader = $("#page-header")[0]; //note the [0], jQuery returns an object, so to get the html DOM object we need the first item in the object
+var pagecontainer = $("#page-container")[0]; 
+var imgSelector = $("#my-file-selector"); //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
+var refreshbtn = $("#refreshbtn"); 
+//Note: changing them all to [0] may prevent some errors when using functions linked to that variable.
+
+// Register button listeners
+imgSelector.addEventListener("change", function () { // file has been picked
+    pageheader.innerHTML = "Just a sec while we analyse your mood...";
+    processImage(function (file) { //this checks the extension and file
+        // Get emotions based on image
+        sendEmotionRequest(file, function (emotionScores) { //here we send the API request and get the response
+            // Find out most dominant emotion
+            currentMood = mood.getCurrMood(emotionScores); //this is where we send out scores to find out the predominant emotion
+            changeUI(); //time to update the web app, with their emotion!
+
+            //Done!!
+        });
+    });
+});
+
+refreshbtn.addEventListener("click", function () {
+    // TODO: Load random song based on mood
+    alert("You clicked the button"); 
+});
+
+function processImage(callback) {
+    var file = imgSelector.files[0];  //get(0) is required as imgSelector is a jQuery object so to get the DOM object, its the first item in the object. files[0] refers to the location of the photo we just chose.
+    var reader = new FileReader();
+    if (file) {
+        reader.readAsDataURL(file); //used to read the contents of the file
+    } else {
+        console.log("Invalid file");
+    }
+    reader.onloadend = function () { 
+        //After loading the file it checks if extension is jpg or png and if it isnt it lets the user know.
+        if (!file.name.match(/\.(jpg|jpeg|png)$/)){
+            pageheader.innerHTML = "Please upload an image file (jpg or png).";
+        } else {
+            //if file is photo it sends the file reference back up
+            callback(file);
+        }
+    }
+}
+
+function changeUI() {
+    //Show detected mood
+    pageheader.innerHTML = "Your mood is: " + currentMood.name;  //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
+    //Show mood emoji
+    let img = document.getElementById("selected-img"); //getting a predefined area on our webpage to show the emoji
+    img.src = currentMood.emoji; //link that area to the emoji of our currentMood.
+    img.style.display = "block"; //just some formating of the emoji's location
+
+    //Display song refresh button
+    refreshbtn.style.display = "inline";
+    //Remove offset at the top
+    pagecontainer.style.marginTop = "20px";
+}
+
+// Refer to http://stackoverflow.com/questions/35565732/implementing-microsofts-project-oxford-emotion-api-and-file-upload
+// and code snippet in emotion API documentation
+function sendEmotionRequest(file, callback) {
+    $.ajax({
+        url: "https://api.projectoxford.ai/emotion/v1.0/recognize",
+        beforeSend: function (xhrObj) {
+            // Request headers
+            xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
+            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "d342c8d19d4e4aafbf64ed9f025aecc8");
+        },
+        type: "POST",
+        data: file,
+        processData: false
+    })
+        .done(function (data) {
+            if (data.length != 0) { // if a face is detected
+                // Get the emotion scores
+                var scores = data[0].scores;
+                callback(scores);
+            } else {
+                pageheader.innerHTML = "Hmm, we can't detect a human face in that photo. Try another?";
+            }
+        })
+        .fail(function (error) {
+            pageheader.innerHTML = "Sorry, something went wrong. :( Try again in a bit?";
+            console.log(error.getAllResponseHeaders());
+        });
+}
+```
+
+Remember to relink our newly created JavaScript file (created from TypeScript compilation) back in our `index.html` and remove the link to `basic.js`
+```TypeScript
+<script src="./js/main.js"></script>
+```
+Now our code should still work like it did before, try give it a go.
 
 ## Tutorial 5: Involving soundcloud
 
-We'll create a new file called `musichandler.ts` this will also reference our new `moodhandler.ts`
+Now lets get to fun stuff! 
+We'll create a new file called `musichandler.ts` in our `js` folder, this will also reference our new `moodhandler.ts`  
 
 At the top of the file add the following line so we can use the `Mood` class
 ```TypeScript
 import * as mood from "./moodhandler";
 ```
+
 ### 1. Adding Song Class
 In this file, we'll add a `Song` class to store information about the songs we will play on soundcloud.
 ```TypeScript
@@ -331,9 +477,9 @@ export function loadSong(currentMood : mood.Mood) : void {
     var track_url : string = songSelected.url;
 
     // change this to jquery
-    document.getElementById("track-name").innerHTML = "Have a listen to: " + songSelected.title;
-    document.getElementById("track-name").style.display = "block";
-    document.getElementById("musicplayer").style.display = "block";
+    $("#track-name")[0].innerHTML = "Have a listen to: " + songSelected.title;
+    $("#track-name")[0].style.display = "block";
+    $("#musicplayer")[0].style.display = "block";
     loadPlayer(track_url);
 }
 ```
@@ -341,7 +487,7 @@ export function loadSong(currentMood : mood.Mood) : void {
 
 In order to use SoundCloud we need to register and get an API key. To do so follow [SoundCloud's Register a new app](http://soundcloud.com/you/apps/new). 
 
-<picture>
+![SoundCloud App registration](photos/sc_reg.png)
 
 Add the SoundCloud JavaScript reference to your `index.html` file
 ```TypeScript
@@ -376,7 +522,7 @@ For further documentation about sound cloud please refer to their [API documenta
 ### 6. Changing code to utilize our new musichandler
 
 #### 1. Import musichandler
-In `basic.js` add the following at the top of the file
+In `main.js` add the following at the top of the file
 ```TypeScript
 import * as music from "./musichandler";
 
@@ -392,20 +538,36 @@ Remember when we said we'd be calling `init()` from musichandler.ts later, well 
 #### 2. Invoke load song
 Before our code didnt really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function from `musichandler.ts`
 
-Replace the inside of `refreshbtn.on("click", function () {` inside `basic.js` from doing nothing (giving an alert) to loading a song
+Add the call to `loadSong()` inside `main.ts` at the end of the function `processImage(function (file) {` (after `changeUI();`), 
 
 ```TypeScript
     // Load random song based on mood
     music.loadSong(currentMood);
 ```
-#### 3. Add div to hold our SoundCloud player
+
+Replace the inside of `refreshbtn.on("click", function () {` inside `main.ts` from doing nothing (giving an alert) to loading a song when we try ask for a new song
+
+```TypeScript
+    // Load random song based on mood
+    music.loadSong(currentMood);
+```
+
+#### 3. Invoke load song
+
+```TypeScript
+    //Display song refresh button
+    refreshbtn.style.display = "inline";
+    //Remove offset at the top
+    pagecontainer.style.marginTop = "20px";
+```
+#### 4. Add div to hold our SoundCloud player
 
 Add the following after `<div class="btn-wrapper"> ... </div`, so we can have our songs play depending on the mode. (Provided by our `loadPlayer()` function in `musichandler.ts`)
 
 ```html
 <div id="musicplayer"></div>
 ```
-#### 3. Add some styling
+#### 5. Add some styling
 
 Add the following to your `style.css` just so that nothing is there when we first open our website
 ```css
@@ -420,7 +582,8 @@ Add the following to your `style.css` just so that nothing is there when we firs
 ```
 ### 7. Test our new website
 Now once all these changes have been made, we should be done! Once uploading a picture to determine our mode our website should look like this and play a song based on our mood.
-<PICTURE>
+
+![Finished Website](photos/web_complete.jpg)
 
 Feel free to play around and add your songs to the list.
 
