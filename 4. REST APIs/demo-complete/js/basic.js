@@ -105,7 +105,7 @@ function sendEmotionRequest(file, callback) {
         .done(function (data) {
             if (data.length != 0) { // if a face is detected
                 // Get the emotion scores
-                let scores = data[0].scores;
+                var scores = data[0].scores;
                 callback(scores);
             } else {
                 pageheader.innerHTML = "Hmm, we can't detect a human face in that photo. Try another?";

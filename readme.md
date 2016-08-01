@@ -40,12 +40,10 @@ and task runners.
 popular package manager npm*
 
 ### [3. Libraries and Frameworks (Frontend)](3. Libraries and Frameworks)
-*documentation in progress*
 * Bootstrap for responsive front ends
 * jQuery + plugins 
 
 ### [4. REST APIs](4. REST APIs)
-*documentation in progress*
 * What are REST APIs
 * Demo some simple APIs (like currency conversion)
 * Calling them using AJAX
@@ -72,7 +70,7 @@ popular package manager npm*
 * Linking to source control via continuous deployment
 * Monitoring via Application Insights
 
-### [8. Advanced Tools](8. Advanced Tools)
+### 8. Advanced Tools
 *documentation in progress*
 * Scaffolding (Yeoman)
 * View render engines (Handlebars, Jade)
