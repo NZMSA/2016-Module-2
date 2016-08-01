@@ -31,6 +31,7 @@ Asynchronous JavaScript and XML. Allows webpages to dynamically request data (an
 
 ## Bootcamp Resources
 - Slide Deck: [Download](https://1drv.ms/p/s!AhUTdgNym7JMjCogDG612PQ7cFcf)
+- Video: [YouTube](https://youtu.be/H4bQvN7zE64)
 
 ## Before you Code!
 Before we begin even coding, its a good idea to check out the API documentation and sign-up for the service if authentication is required by the API.
@@ -211,15 +212,13 @@ Lets check out that code now!
     .done(function (data) { //the "done" is what happens when the API sends a response.
             if (data.length != 0) { // if a face is detected (if no face, no Data!)
                 // Get the emotion scores
-                let scores = data[0].scores; //Our data is all in the 0 position. As we are using JSON, we can pull specific parts of the response. If we wanted to use faceRectangle, we would write "data[0].faceRectangle"
+                var scores = data[0].scores; //Our data is all in the 0 position. As we are using JSON, we can pull specific parts of the response. If we wanted to use faceRectangle, we would write "data[0].faceRectangle"
                 callback(scores); //Send our scores out of this function so we can do things with it! (what we covered earlier)
             } else {
                 pageheader.innerHTML = "Hmm, we can't detect a human face in that photo. Try another?"; //No face? Good to let your user know they done-goofed.
             }
         })
 ```
-
-After looking at the code above you might wonder why did I use let, rather than var? Var scopes out the entire function, while let scopes out just that block. Meh.
         
 
 ####3. Error Handling
@@ -250,7 +249,7 @@ function sendEmotionRequest(file, callback) {
         .done(function (data) {
             if (data.length != 0) { // if a face is detected
                 // Get the emotion scores
-                let scores = data[0].scores;
+                var scores = data[0].scores;
                 callback(scores);
             } else {
                 pageheader.innerHTML = "Hmm, we can't detect a human face in that photo. Try another?";
