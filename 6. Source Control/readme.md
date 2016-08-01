@@ -27,7 +27,9 @@ Open up GitHub and create a 'New Repository' by clicking on the 'plus' icon on t
 
 Give your repository a name and description. You choose to keep the repository public (others can see the source code) or private. 
 
-You can also choose to initialise with a README if you want. 
+You can also choose to 
+* initialise with a README 
+* add a gitignore for Node (which will ignore certain files that don't need to be uploaded) 
 
 When you are ready, press 'Create repository'
 
@@ -50,7 +52,8 @@ When you are in the directory, type `clone https://github.com/YOUR_ID/YOUR_GITHU
 ## Step 4: Add Project Files
 Open up your file explorer and navigate to the directory where you cloned your repository files (for me it is C:\Users\Hayden\Documents\GitHub\moodify)
 
-Move your entire project files and folder here
+Move your entire project files and folder here  
+(Note: your project files and folder will look different to the screenshot)
 
 ![Copy Files](img/copy_files.PNG)
 
@@ -144,3 +147,4 @@ Merge a branch with the currently selected branch. In an actual team, you may ne
 ### Extra Learning Resources
 * [GitHub Online Training](https://try.github.io/)
 * [GitHub Guide](https://guides.github.com/)
+* [Emmet Snippet Extension Cheat Sheet](http://docs.emmet.io/cheat-sheet/)
