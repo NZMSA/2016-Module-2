@@ -153,7 +153,7 @@ Our `tsconfig.json` file will look like this,
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "sourceMap": true
+        "sourceMap": false
     }
 }
 ```
@@ -242,6 +242,8 @@ To review a reason why a build may have failed:
 ## Tutorial 5: Converting our JavaScript to TypeScript
 Lets tidy up our code bit while we convert our current code to TypeScript. 
 
+## TYPINGS install
+
 ### 1. MoodHandler file
 Create a new file called `moodhandler.ts` in our `js` folder, this will look after our mood related functionality and hold a `Mood` class
 ```TypeScript
@@ -262,7 +264,7 @@ var angry : Mood = new Mood("angry", "https://cdn.shopify.com/s/files/1/1061/192
 var neutral : Mood  = new Mood("neutral", "https://cdn.shopify.com/s/files/1/1061/1924/files/Neutral_Face_Emoji.png?9898922749706957214");
 
 
-export function getCurrMood(scores : number) : Mood {
+export function getCurrMood(scores : any) : Mood {
     let currentMood: Mood;
     // In a practical sense, you would find the max emotion out of all the emotions provided. However we'll do the below just for simplicity's sake :P
     if (scores.happiness > 0.4) {
@@ -287,14 +289,13 @@ Lets create a new file called `main.ts` in our `js` folder, this will replace ou
 
 ```TypeScript
 import * as mood from "./moodhandler";
-
 var currentMood: mood.Mood;
 
 // Get elements from DOM
 var pageheader = $("#page-header")[0]; //note the [0], jQuery returns an object, so to get the html DOM object we need the first item in the object
 var pagecontainer = $("#page-container")[0]; 
-var imgSelector = $("#my-file-selector"); //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
-var refreshbtn = $("#refreshbtn"); 
+var imgSelector : HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
+var refreshbtn = $("#refreshbtn")[0];
 //Note: changing them all to [0] may prevent some errors when using functions linked to that variable.
 
 // Register button listeners
@@ -340,7 +341,7 @@ function changeUI() {
     //Show detected mood
     pageheader.innerHTML = "Your mood is: " + currentMood.name;  //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
     //Show mood emoji
-    let img = document.getElementById("selected-img"); //getting a predefined area on our webpage to show the emoji
+    var img : HTMLImageElement = <HTMLImageElement>  $("#selected-img")[0];//getting a predefined area on our webpage to show the emoji
     img.src = currentMood.emoji; //link that area to the emoji of our currentMood.
     img.style.display = "block"; //just some formating of the emoji's location
 
