@@ -104,7 +104,7 @@ To open up command prompt, press **Win+R** and type **cmd**
 ## Git Basics
 Here are the basic git commands. Make sure you are in the right directory or else it won't work.
 
-**Clone** - `git clone`  
+**Clone** - `git clone [YOUR GITHUB REPO URL]`  
 Clones the entire code base to the current location 
 
 **Add** - `git add -A`  
