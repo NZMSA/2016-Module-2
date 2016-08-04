@@ -50,7 +50,7 @@ popular package manager npm*
 
 *We will do these demos using the environment setup in the last section*
 
-### 5. Typescript
+### [5. Typescript](5. Typescript)
 *documentation in progress*
 * What is it and why we need it
 * Syntax (very similar to JS)
@@ -64,13 +64,13 @@ popular package manager npm*
 * Cloning + adding files 
 * Committing changes
 
-### 7. Deployment to Azure 
+### [7. Deployment to Azure](7. Deployment to Azure)
 *documentation in progress*
 * Setting up Azure account
 * Linking to source control via continuous deployment
 * Monitoring via Application Insights
 
-### 8. Advanced Tools
+### [8. Advanced Tools](8. Advanced Tools)
 *documentation in progress*
 * Scaffolding (Yeoman)
 * View render engines (Handlebars, Jade)
