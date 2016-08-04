@@ -1,0 +1,56 @@
+html { 
+    background: url("http://theme.dima-lab.com/okab/images/landing-page-iphone/blurred-home-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    color: white;
+    background-color: transparent;
+}
+
+h1#app-name {
+    font-size:84px;
+}
+
+button#refreshbtn {
+    display:none;
+}
+
+img#selected-img{
+    width:150px;
+    height:150px;
+    padding:20px;
+    display:none;
+    margin: 0 auto;
+}
+
+h2#page-header {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+body #page-container {
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-wrapper {
+    padding: 20px 0;
+}
+
+input#my-file-selector {
+    display:none;
+}
+
+#musicplayer{
+    padding:20px;
+    display:none;
+}
+
+h4#track-name {
+    display:none;
+}
