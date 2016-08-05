@@ -139,8 +139,8 @@ Merge a branch with the currently selected branch. You can instead do a 'Pull Re
 
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com)
-* [Video](http://link.com)
+* [Slide Deck](http://link.com) (Will be up soon!)
+* [Video](http://link.com) (Will be up soon!)
 
 ### Tools
 * [Visual Studio Code](https://code.visualstudio.com) - Code Editor with Git Build In 
