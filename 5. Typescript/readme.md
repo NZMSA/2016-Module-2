@@ -1,8 +1,8 @@
-# 1. 5. TypeScript [WIP]
+# 1. 5. TypeScript 
 ## Introduction
 Uptil now you have been developing in JavaScript to get an understanding on web development. We want to introduce you guys to TypeScript. We believe it would help with a lot of common errors that can arise from developing in JavaScript. Those familiar with typed languages like Java, C# will have your classes back.
 
-TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. (Superset means it behaves just like JavaScript but with extra stuff) TypeScript follows similar syntax to JavaScript with the introduction of static checking and code refactoring. You basically write in TypeScript but whats actually being run in is the generated JavaScript. This JavaScript can then still be run on any browser. 
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. (Superset means it behaves just like JavaScript but with extra stuff) TypeScript follows similar syntax to JavaScript with the introduction of static checking and code refactoring. You basically write in TypeScript but what’s actually being run in is the generated JavaScript. This JavaScript can then still be run on any browser. 
 
 Another superset that exist is [CoffeeScript](http://coffeescript.org/)
 
@@ -59,7 +59,7 @@ notSure = "maybe a string instead";
 notSure = false; 
 ```
 
-And if your not familar there is the type `void` which means nothing. This is good when functions do not return anything and just do something.
+And if you’re not familiar there is the type `void` which means nothing. This is good when functions do not return anything and just do something.
 ```TypeScript
 function warnUser(): void {
     alert("This is my warning message");
@@ -82,8 +82,8 @@ greeter.ts(7,26): Supplied parameters do not match any signature of call target
 ```
 
 ### Interfaces
-If you dont know what an interface is, it is basically a structural type that can have properties/fields (`firstName`, `lastName`) and can have methods (`sayHello()`).
-In TypeScript, two types are compatiable if their internal structure is compatiable. This allows us to implement an interface just by having the shape the interface requires, without an explicit implements clause.
+If you don’t know what an interface is, it is basically a structural type that can have properties/fields (`firstName`, `lastName`) and can have methods (`sayHello()`).
+In TypeScript, two types are compatible if their internal structure is compatible. This allows us to implement an interface just by having the shape the interface requires, without an explicit implements clause.
 
 ```TypeScript
 interface Person {
@@ -121,7 +121,7 @@ We can then call the method `greet()` onto our `greeter` object.
 var message: string = greeter.greet();
 ```
 
-Of course, one of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In this example it is done by extends, we can also utilize inheritance by implemnting an interface.
+Of course, one of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In this example it is done by extends, we can also utilize inheritance by implementing an interface.
 ```TypeScript
 class Animal {
     name: string;
@@ -238,12 +238,12 @@ Select `TypeScript - Watch Mode`. This will create a `tasks.json` file in the wo
 
 This is going to monitor the project for any changes in our TypeScript files and compile them behind the scenes.
 
-Note this is a continious task
+Note this is a continuous task
 
 ## Reviewing Build Issues
 Sometimes builds don't go that smoothly
 
-For example this line of code in typescript will cause an error. (Our intellisense should tell us this!)
+For example, this line of code in typescript will cause an error. (Our intellisense should tell us this!)
 ```
 HelloWorld.ts(3,17): error TS2339: Property 'logg' does not exist on type 'Console'.
 ```
@@ -257,7 +257,7 @@ To review a reason why a build may have failed:
 
 ## Tutorial 3:  Install TypeScript support for jQuery
 
-We require TypeScript's type definition files to get tooling support for plain javaScript. They allow you to provide type information for JavaScript code that is by itself (by its very nature) not statically typed. The file extension for such a file is `.d.ts`, where d stands for definition. 
+We require TypeScript's type definition files to get tooling support for plain JavaScript. They allow you to provide type information for JavaScript code that is by itself (by its very nature) not statically typed. The file extension for such a file is `.d.ts`, where d stands for definition. 
 
 Typings is the simple way to manage and install TypeScript definitions.
 
@@ -272,15 +272,15 @@ In the terminal type:
 ```
 typings install dt~jquery --save --global
 ```
-The command `typings install dt~jquery --save` fetches the jquery typings module and `--save` saves it in your `typings.json` file as a dependency.
-You should see a folder in your directory called `typings` with a jquery subfolder and a new `typings.json` (this is similar to `package.json`)
+The command `typings install dt~jquery --save` fetches the jQuery typings module and `--save` saves it in your `typings.json` file as a dependency.
+You should see a folder in your directory called `typings` with a jQuery subfolder and a new `typings.json` (this is similar to `package.json`)
 
 Here we get [DefinetlyTyped](http://definitelytyped.org/)'s typings of jQuery.
 
 ## Tutorial 4: Converting our JavaScript to TypeScript
 
 ### 1. Main file from basic
-Lets create a new file called `main.ts` in our `js` folder, this will replace our original `basic.js` so we dont get confused.
+Lets create a new file called `main.ts` in our `js` folder, this will replace our original `basic.js` so we don’t get confused.
 
 ```TypeScript
 var currentMood: Mood;
@@ -506,8 +506,8 @@ function init() : void {
 }
 ```
 
-### 4. Choose song to play based on moode
-Given our mode we can then display the song and then use soundcloud to play the song, we add the following to `main.ts` file
+### 4. Choose song to play based on mood
+Given our mode we can then display the song and then use SoundCloud to play the song, we add the following to `main.ts` file
 ```TypeScript
 function loadSong(currentMood : Mood) : void {
     var songSelected : Song = myPlaylist.getRandSong(currentMood.name); // gets a random song based on the moodd
@@ -567,7 +567,7 @@ For further documentation about sound cloud please refer to their [API documenta
 ### 6. Changing code to utilize our new musichandler
 
 #### 1. Invoke load song
-Before our code didnt really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function.
+Before our code didn’t really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function.
 
 Add the call to `loadSong()` inside `main.ts` at the end of the function `processImage(function (file) {` (after `changeUI();`), 
 
