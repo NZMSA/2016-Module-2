@@ -4,7 +4,7 @@ Uptil now you have been developing in JavaScript to get an understanding on web 
 
 TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. (Superset means it behaves just like JavaScript but with extra stuff) TypeScript follows similar syntax to JavaScript with the introduction of static checking and code refactoring. You basically write in TypeScript but whats actually being run in is the generated JavaScript. This JavaScript can then still be run on any browser. 
 
-Other supersets that exist are [CoffeeScript](http://coffeescript.org/), [Need more]
+Another superset that exist is [CoffeeScript](http://coffeescript.org/)
 
 For this course, we will be going over the basics of TypeScript, converting our current code into TypeScript and finishing our website. 
 
@@ -14,12 +14,10 @@ For this course, we will be going over the basics of TypeScript, converting our 
 var number = 10.2;
 number = "String value";
 ```
-* No intellisense [Need to confirm]
+* No intellisense support
 ```TypeScript
-var number = 10.2;
-numbr = -1; // undefined
+document.getElementById("musicplayer").innerhtml = "hello"; //innerhtml doesnt exist but "innerHTML" does
 ```
-
 
 ### Benefits of TypeScript
 * Object-oriented programming (OOP): work with classes and interfaces
@@ -27,11 +25,10 @@ numbr = -1; // undefined
 * => Enable IDEs to provide a richer environment for spotting common errors as you type the code
 * => Helps with autocompletetion of your code, with types it can help suggest more appropriate variables to pass in to a function call
 
-
 ## Learning Outcomes
 * Learn about the basics of TypeScript 
 * Learn how to watch our TypeScript files to compile to JavaScript
-* Converting our website to TypeScript
+* Learn about Typings
 * Finishing our website in TypeScript
 
 ## Resources
@@ -44,7 +41,7 @@ numbr = -1; // undefined
 If you haven't already got TypeScript installed, please refer back to [2. Development Environment](https://github.com/NZMSA/2016-Module-2/tree/master/2.%20Development%20Environment) under Tutorial 1, Setting up TypeScript.
 Please also ensure you have your code up to date from the before module [4. REST APIs](https://github.com/NZMSA/2016-Module-2/tree/master/4.%20REST%20APIs)
 
-## Tutorial 1: Basics of TypeScript
+## Basics of TypeScript
 
 ### Types
 
@@ -138,8 +135,7 @@ class Rhino extends Animal {
 
 `super()` is used when we want to call the parent's class method instead. Here we called Animal's constructor inside of the Rhino's constructor.
 
-
-## Tutorial 2: Compilation of TypeScript to JavaScript
+## Tutorial 1: Compilation of TypeScript to JavaScript
 
 ### 1. Create a tsconfig.json file
 This defines the TypeScript project settings such as the compiler options and the files that should be included.
@@ -212,7 +208,7 @@ As this is the only task in the file, you can execute it by simply pressing `Ctr
 
 So each time you want to recompile your JavaScript files from your TypeScript due to changes, `Ctrl+Shift+B`
 
-### Tutorial 3: Compilation of TypeScript to JavaScript by watching
+### Tutorial 2: Compilation of TypeScript to JavaScript by watching
 Its a bit tedious to Run Build Task (`Ctrl+Shift+B`) each time you want to implement your new change.
 
 Here is how "Watching" the files can be of great help.
@@ -257,8 +253,31 @@ To review a reason why a build may have failed:
 * This would show up in the output window (which can be opened using `Ctrl+Shift+U`) and selecting Tasks in the output view dropdown.
 * You can click on the icon below to get a list of the problems and navigate to them.
 
-## Tutorial 5: Converting our JavaScript to TypeScript
-## TYPINGS install
+![View TypeScript errors](photos/view_ts_errors.png)
+
+## Tutorial 3:  Install TypeScript support for jQuery
+
+We require TypeScript's type definition files to get tooling support for plain javaScript. They allow you to provide type information for JavaScript code that is by itself (by its very nature) not statically typed. The file extension for such a file is `.d.ts`, where d stands for definition. 
+
+Typings is the simple way to manage and install TypeScript definitions.
+
+### Setting up Typings
+In the terminal type:
+```
+npm install typings -g
+```
+
+### Acquire jQuery typings
+In the terminal type:
+```
+typings install dt~jquery --save --global
+```
+The command `typings install dt~jquery --save` fetches the jquery typings module and `--save` saves it in your `typings.json` file as a dependency.
+You should see a folder in your directory called `typings` with a jquery subfolder and a new `typings.json` (this is similar to `package.json`)
+
+Here we get [DefinetlyTyped](http://definitelytyped.org/)'s typings of jQuery.
+
+## Tutorial 4: Converting our JavaScript to TypeScript
 
 ### 1. Main file from basic
 Lets create a new file called `main.ts` in our `js` folder, this will replace our original `basic.js` so we dont get confused.
@@ -601,7 +620,8 @@ Feel free to play around and add your songs to the list.
 ## Completed Example
 For reference, the complete solution to this demo has provided and can be found [here](demo-complete-day-two). You will need to clone or download this whole repository as a zip and open the demo-complete-day-two folder using Visual Studio Code. 
 To retrieve back your `node_modules` run `npm install` and to retrieve back your `typings` run `typings install`.
-You need `node_modules`  for your website to run properly but `typings` just for development purposes.
+
+You need `node_modules` for your website to run properly but `typings` just for development purposes.
 
 To run, just use the standard `browser-sync start --server --files "**/*"` command.
 
@@ -612,4 +632,4 @@ To run, just use the standard `browser-sync start --server --files "**/*"` comma
 ### Extra Learning Resources
 * [TypeScript](https://www.typescriptlang.org/)
 * [SoundCloud API](https://developers.soundcloud.com/docs/api/guide)
-
+* [More about Typings](https://blog.mariusschulz.com/2014/05/19/using-typescripts-type-definition-files-to-get-tooling-support-for-plain-javascript)
