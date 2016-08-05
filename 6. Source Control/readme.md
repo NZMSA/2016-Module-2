@@ -18,14 +18,18 @@ I would recommend learning how to use command line even if you prefer the graphi
 To install git, head over to this [link](https://git-scm.com/) and download the latest version of git
 
 ### Setting up a GitHub Account
-Head over to [GitHub](https://github.com/) and create a new account if you don't have one already 
+Head over to [GitHub](https://github.com/) and create a new account if you don't have one already
+
+(Tip: If you are a student, you can get unlimited private repositories for your personal projects! Checkout [GitHub Student Pack](https://education.github.com/pack) )
 
 ## Step 2: Create a Repository
 Open up GitHub and create a 'New Repository' by clicking on the 'plus' icon on the top right corner of the screen
 
 ![Create Repository](img/create_repository.PNG)
 
-Give your repository a name and description. You choose to keep the repository public (others can see the source code) or private. 
+Give your repository a name and description. 
+
+You choose to keep the repository public (others can see the source code) or private. But for your submission for module 2, you need to keep the repo public.
 
 You can also choose to 
 * initialise with a README 
@@ -57,8 +61,8 @@ Move your entire project files and folder here
 
 ![Copy Files](img/copy_files.PNG)
 
-Back to cmd, type `git status` and you will see that there are many files are 'untracked'  
-(Hint: Make sure you are inside the project folder - cd moodify)
+Back to cmd go into the newly created repo folder (e.g. `cd moodify`) and type `git status` and you will see that there are many files are 'untracked'  
+(Hint: Make sure you are inside the project folder or else you'll get an error)
 
 ![Git Status](img/git_status.PNG)
 
@@ -128,7 +132,7 @@ When you first create your repository, you'll only have one branch called Master
 Switch from one branch to another
 
 **Merge Branch**  - `git merge [name of branch]`  
-Merge a branch with the currently selected branch. In an actual team, you may need to use a 'Pull Request' instead of a direct merge.
+Merge a branch with the currently selected branch. You can instead do a 'Pull Request' and merge on the GitHub website.
 
 
 
