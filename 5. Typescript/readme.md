@@ -146,7 +146,6 @@ This defines the TypeScript project settings such as the compiler options and th
 
 `File --> New File --> tsconfig.json`
 
-
 Our `tsconfig.json` file will look like this,
 ```json
 {
@@ -158,7 +157,7 @@ Our `tsconfig.json` file will look like this,
 }
 ```
 
-Now when you create a .ts file as part of the project we will offer up rich editing experiences and syntax validation.
+Now when you create a `.ts` file as part of the project we will offer up rich editing experiences and syntax validation.
 
 ### 2. Compile TypeScript to JavaScript
 
@@ -180,9 +179,9 @@ tsc helloPerson.ts
 
 This will generate the file `helloPerson.js`.
 
-It is obvious this can be quite tedious so
+It is obvious this can be quite tedious.
 
-### 3. Creating a task to compile TypeScript files to JavaScript
+### 3. Creating a task to compile TypeScript files to JavaScript [Optional]
 
 Open Command Palette with `Ctrl+Shift+P`
 
@@ -206,25 +205,44 @@ Select `TypeScript - tsconfig.json`. This will create a `tasks.json` file in the
 
 This is just running `tsc` on our files. 
 
-### 4. To run the build task
+#### 3.1. To run the build task
 To test our task is running, first delete the `helloPerson.js` generated from step 2.
 
 As this is the only task in the file, you can execute it by simply pressing `Ctrl+Shift+B` (Run Build Task). At this point you will see an additional file show up in the file list `helloPerson.js`.
 
 So each time you want to recompile your JavaScript files from your TypeScript due to changes, `Ctrl+Shift+B`
 
-## Tutorial 3: Compilation of TypeScript to JavaScript by watching
+### Tutorial 3: Compilation of TypeScript to JavaScript by watching
 Its a bit tedious to Run Build Task (`Ctrl+Shift+B`) each time you want to implement your new change.
 
 Here is how "Watching" the files can be of great help.
 
-Run the following command in xxx
+Firstly delete our existing `tasks.json` if you created it. 
+
+Open Command Palette with `Ctrl+Shift+P`
+
+Type in `Configure Task Runner`, press Enter to select it. 
+This shows a list of templates for tasks you can choose from.
+
+Select `TypeScript - Watch Mode`. This will create a `tasks.json` file in the workspace .vscode folder.
 
 ```
-tsc *.ts --watch
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "tsc",
+    "isShellCommand": true,
+    "args": ["-w", "-p", "."],
+    "showOutput": "silent",
+    "isWatching": true,
+    "problemMatcher": "$tsc-watch"
+}
 ```
 
-This is going to monitor the folder for any changes in our TypeScript files and compile them behind the scenes.
+This is going to monitor the project for any changes in our TypeScript files and compile them behind the scenes.
+
+Note this is a continious task
 
 ## Reviewing Build Issues
 Sometimes builds don't go that smoothly
@@ -240,63 +258,21 @@ To review a reason why a build may have failed:
 * You can click on the icon below to get a list of the problems and navigate to them.
 
 ## Tutorial 5: Converting our JavaScript to TypeScript
-Lets tidy up our code bit while we convert our current code to TypeScript. 
-
 ## TYPINGS install
 
-### 1. MoodHandler file
-Create a new file called `moodhandler.ts` in our `js` folder, this will look after our mood related functionality and hold a `Mood` class
-```TypeScript
-//Creating a Mood object which has the mood as a string and its corresponding emoji
-export class Mood {
-    name: string;
-    emoji: string;
-    constructor(public mood, public emojiurl) {
-        this.name = mood;
-        this.emoji = emojiurl;
-    }
-}
-
-
-var happy : Mood = new Mood("happy", "http://emojipedia-us.s3.amazonaws.com/cache/a0/38/a038e6d3f342253c5ea3c057fe37b41f.png");
-var sad : Mood  = new Mood("sad", "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji.png?9898922749706957214");
-var angry : Mood = new Mood("angry", "https://cdn.shopify.com/s/files/1/1061/1924/files/Very_Angry_Emoji.png?9898922749706957214");
-var neutral : Mood  = new Mood("neutral", "https://cdn.shopify.com/s/files/1/1061/1924/files/Neutral_Face_Emoji.png?9898922749706957214");
-
-
-export function getCurrMood(scores : any) : Mood {
-    let currentMood: Mood;
-    // In a practical sense, you would find the max emotion out of all the emotions provided. However we'll do the below just for simplicity's sake :P
-    if (scores.happiness > 0.4) {
-        currentMood = happy;
-    } else if (scores.sadness > 0.4) {
-        currentMood = sad;
-    } else if (scores.anger > 0.4) {
-        currentMood = angry;
-    } else {
-        currentMood = neutral;
-    }
-    return currentMood;
-}
-```
-This is just like our JavaScript from before in `basic.js` however we have introduced Mood as a class and able to type check our functions and characters. If by accident we try 
-```TypeScript
-getCurrMood("hello")
-```
-This time, we'd get an error when we try to compile to `.js`
-### 2. Main file from basic
+### 1. Main file from basic
 Lets create a new file called `main.ts` in our `js` folder, this will replace our original `basic.js` so we dont get confused.
 
 ```TypeScript
-import * as mood from "./moodhandler";
-var currentMood: mood.Mood;
+var currentMood: Mood;
 
 // Get elements from DOM
 var pageheader = $("#page-header")[0]; //note the [0], jQuery returns an object, so to get the html DOM object we need the first item in the object
 var pagecontainer = $("#page-container")[0]; 
-var imgSelector : HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
-var refreshbtn = $("#refreshbtn")[0];
-//Note: changing them all to [0] may prevent some errors when using functions linked to that variable.
+
+// The html DOM object has been casted to a input element (as defined in index.html) as later we want to get specific fields that are only avaliable from an input element object
+var imgSelector : HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0]; 
+var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 
 // Register button listeners
 imgSelector.addEventListener("change", function () { // file has been picked
@@ -305,7 +281,7 @@ imgSelector.addEventListener("change", function () { // file has been picked
         // Get emotions based on image
         sendEmotionRequest(file, function (emotionScores) { //here we send the API request and get the response
             // Find out most dominant emotion
-            currentMood = mood.getCurrMood(emotionScores); //this is where we send out scores to find out the predominant emotion
+            currentMood = getCurrMood(emotionScores); //this is where we send out scores to find out the predominant emotion
             changeUI(); //time to update the web app, with their emotion!
 
             //Done!!
@@ -318,7 +294,7 @@ refreshbtn.addEventListener("click", function () {
     alert("You clicked the button"); 
 });
 
-function processImage(callback) {
+function processImage(callback) : void {
     var file = imgSelector.files[0];  //get(0) is required as imgSelector is a jQuery object so to get the DOM object, its the first item in the object. files[0] refers to the location of the photo we just chose.
     var reader = new FileReader();
     if (file) {
@@ -337,7 +313,7 @@ function processImage(callback) {
     }
 }
 
-function changeUI() {
+function changeUI() : void {
     //Show detected mood
     pageheader.innerHTML = "Your mood is: " + currentMood.name;  //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
     //Show mood emoji
@@ -353,7 +329,7 @@ function changeUI() {
 
 // Refer to http://stackoverflow.com/questions/35565732/implementing-microsofts-project-oxford-emotion-api-and-file-upload
 // and code snippet in emotion API documentation
-function sendEmotionRequest(file, callback) {
+function sendEmotionRequest(file, callback) : void {
     $.ajax({
         url: "https://api.projectoxford.ai/emotion/v1.0/recognize",
         beforeSend: function (xhrObj) {
@@ -379,7 +355,46 @@ function sendEmotionRequest(file, callback) {
             console.log(error.getAllResponseHeaders());
         });
 }
+
+// Section of code that handles the mood
+
+//A Mood class which has the mood as a string and its corresponding emoji
+class Mood {
+    name: string;
+    emoji: string;
+    constructor(public mood, public emojiurl) {
+        this.name = mood;
+        this.emoji = emojiurl;
+    }
+}
+
+
+var happy : Mood = new Mood("happy", "http://emojipedia-us.s3.amazonaws.com/cache/a0/38/a038e6d3f342253c5ea3c057fe37b41f.png");
+var sad : Mood  = new Mood("sad", "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji.png?9898922749706957214");
+var angry : Mood = new Mood("angry", "https://cdn.shopify.com/s/files/1/1061/1924/files/Very_Angry_Emoji.png?9898922749706957214");
+var neutral : Mood  = new Mood("neutral", "https://cdn.shopify.com/s/files/1/1061/1924/files/Neutral_Face_Emoji.png?9898922749706957214");
+
+
+// any type as the scores values is from the project oxford api request (so we dont know the type)
+function getCurrMood(scores : any) : Mood {
+    // In a practical sense, you would find the max emotion out of all the emotions provided. However we'll do the below just for simplicity's sake :P
+    if (scores.happiness > 0.4) {
+        currentMood = happy;
+    } else if (scores.sadness > 0.4) {
+        currentMood = sad;
+    } else if (scores.anger > 0.4) {
+        currentMood = angry;
+    } else {
+        currentMood = neutral;
+    }
+    return currentMood;
+}
 ```
+This is just like our JavaScript from before in `basic.js` however we have introduced Mood as a class and able to type check our functions and characters. If by accident we try 
+```TypeScript
+getCurrMood("hello")
+```
+This time, we'd get an error when we try to compile to `.js`
 
 Remember to relink our newly created JavaScript file (created from TypeScript compilation) back in our `index.html` and remove the link to `basic.js`
 ```TypeScript
@@ -387,19 +402,18 @@ Remember to relink our newly created JavaScript file (created from TypeScript co
 ```
 Now our code should still work like it did before, try give it a go.
 
-## Tutorial 5: Involving soundcloud
+## Tutorial 5: Involving SoundCloud
 
 Now lets get to fun stuff! 
-We'll create a new file called `musichandler.ts` in our `js` folder, this will also reference our new `moodhandler.ts`  
+This part of the code will play songs from SoundCloud based on the mood from the picture
 
-At the top of the file add the following line so we can use the `Mood` class
-```TypeScript
-import * as mood from "./moodhandler";
-```
-
+We'll be adding all of this at the bottom of our `main.ts` file
 ### 1. Adding Song Class
 In this file, we'll add a `Song` class to store information about the songs we will play on soundcloud.
 ```TypeScript
+// Section of code that handles the music and soundcloud
+
+//A Song class which has the song's name and URL on soundcloud
 class Song {
     title: string;
     url: string;
@@ -412,7 +426,8 @@ class Song {
 ### 2. Adding Playlist Class
 We will also add a Playlist class to the same file. This will hold a collection of songs for each different mood. From this playlist we can then grab a random song depending on the `mood` given
 ```TypeScript
-export class Playlist {
+//A Playlist class which holds various amount of songs for each different mood
+class Playlist {
     happy: Song[];
     sad: Song[];
     angry: Song[];
@@ -423,9 +438,10 @@ export class Playlist {
         this.angry = [];
     }
 
-    addSong(mood : string, song : string) : void {
+    addSong(mood : string, song : Song) : void {
+        // depending on the mood we want to add it to its corresponding list in our playlist
         if (mood === "happy") {
-            this.happy.push(song);
+            this.happy.push(song); // this means the value of happy of the playlist object that got invoked the method "addSong"
         } else if (mood === "sad") {
             this.sad.push(song);
         } else if (mood === "angry") {
@@ -434,7 +450,7 @@ export class Playlist {
     }
 
     getRandSong(mood : string) : Song {
-        if (mood === "happy" || mood === "neutral") {
+        if (mood === "happy" || mood === "neutral") { // we have happy and neutral as getting songs from happy
             return this.happy[Math.floor(Math.random() * this.happy.length)];
         } else if (mood === "sad") {
             return this.sad[Math.floor(Math.random() * this.sad.length)];
@@ -444,17 +460,18 @@ export class Playlist {
     }
 }
 ```
-In this case an `export` tag is added as we want to use this class outside this file.
 
 ### 3. Initializing playlist with songs. 
 
-We then create a `playlist` object and populate it with various songs for different modes. Add this to  `musichandler.ts` file. 
+We then create a `playlist` object and populate it with various songs for different modes. Add this to  `main.ts` file. 
 ```TypeScript
-var myPlaylist : Playlist = new Playlist();
+var myPlaylist : Playlist;
 
-export function init() : void {
+function init() : void {
     // init playlist
-    myPlaylist.addSong("happy", new Song("Animals", "https://soundcloud.com/martingarrix/martin-garrix-animals-original"));
+    myPlaylist = new Playlist();
+
+    myPlaylist.addSong("happy", new Song("Animals", "https://soundcloud.com/martingarrix/martin-garrix-animals-original")); // Song name and the url of the song on SoundCloud
     myPlaylist.addSong("happy", new Song("Good feeling", "https://soundcloud.com/anderia/flo-rida-good-feeling"));
     myPlaylist.addSong("happy", new Song("Megalovania", "https://soundcloud.com/angrysausage/toby-fox-undertale"));
     myPlaylist.addSong("happy", new Song("On top of the world", "https://soundcloud.com/interscope/imagine-dragons-on-top-of-the"));
@@ -471,17 +488,17 @@ export function init() : void {
 ```
 
 ### 4. Choose song to play based on moode
-Given our mode we can then display the song and then use soundcloud to play the song, we add the following to `musichandler.ts` file
+Given our mode we can then display the song and then use soundcloud to play the song, we add the following to `main.ts` file
 ```TypeScript
-export function loadSong(currentMood : mood.Mood) : void {
-    var songSelected : Song = myPlaylist.getRandSong(currentMood.name);
-    var track_url : string = songSelected.url;
+function loadSong(currentMood : Mood) : void {
+    var songSelected : Song = myPlaylist.getRandSong(currentMood.name); // gets a random song based on the moodd
+    var track_url : string = songSelected.url; 
 
-    // change this to jquery
-    $("#track-name")[0].innerHTML = "Have a listen to: " + songSelected.title;
-    $("#track-name")[0].style.display = "block";
+    $("#track-name")[0].innerHTML = "Have a listen to: " + songSelected.title; // display the song being played
+    $("#track-name")[0].style.display = "block"; // changing this style to block makes it appear (before was set to none so it wasnt seen)
     $("#musicplayer")[0].style.display = "block";
-    loadPlayer(track_url);
+
+    loadPlayer(track_url); // load soundcloud player to play this song
 }
 ```
 ### 5. Setting up SoundCloud and using the player
@@ -494,12 +511,17 @@ Add the SoundCloud JavaScript reference to your `index.html` file
 ```TypeScript
 <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 ```
+At the top of our `main.ts` add this line of code.
+```TypeScript
+declare var SC:any; // Magic - tells that there is some variable SC out there (SC is from the SoundCloud script file)
+```
+`SC` is from the SoundCloud JavaScript we imported, as there does not exists a typings or TypeScript version for SoundCloud we can just have a variable at the top with the name with type `any`, to not get red underlines when developing.  
 
-We then create a function to instantiate our SoundCloud connection in our `musichandler.ts` file. (This is called when we instantiate our playlist)
+We then create a function to instantiate our SoundCloud connection at the bottom of our `musichandler.ts` file. (This is called when we instantiate our playlist)
 ```TypeScript
 var myClientId = "*****PUT YOUR SOUND CLOUD ID HERE****";
 
-function initSC() {
+function initSC() : void {
     // init SoundCloud
     SC.initialize({
         client_id: myClientId
@@ -507,59 +529,54 @@ function initSC() {
 }
 ```
 Here `SC` is from the SoundCloud JavaScript file. 
-We then want to embed the SoundCloud player in a div named `musicplayer` in our html page. Add the following function to  our `musichandler.ts` file. (We will call this later)
+We then want to embed the SoundCloud player in a div named `musicplayer` in our html page. Add the following function to  our `main.ts` file. (We will call this later)
 
 ```TypeScript
-function loadPlayer(trackurl : string) {
+function loadPlayer(trackurl : string) : void {
     SC.oEmbed(trackurl, { auto_play: true }).then(function (oEmbed) {
-        let div = document.getElementById("musicplayer");
-        div.innerHTML = oEmbed.html;
+        var div = $("#musicplayer")[0]; 
+        div.innerHTML = oEmbed.html; // puts the soundcloud player inside the musicplayer div
     });
 }
+
+// Initialise playlist and soundcloud
+init();
 ```
 
 For further documentation about sound cloud please refer to their [API documentation](https://developers.soundcloud.com/docs/api/guide)
 
 ### 6. Changing code to utilize our new musichandler
 
-#### 1. Import musichandler
-In `main.js` add the following at the top of the file
-```TypeScript
-import * as music from "./musichandler";
-
-// Initialise playlist and soundcloud
-music.init();
-
-let currentMood: mood.Mood;???
-```
-
-By importing the file this will allow ourselves to use functions and classes from musichandler.
-Remember when we said we'd be calling `init()` from musichandler.ts later, well here it is!
-
-#### 2. Invoke load song
-Before our code didnt really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function from `musichandler.ts`
+#### 1. Invoke load song
+Before our code didnt really do much once we added a picture, all we got was an emoticon. So lets use our `loadSong()` function.
 
 Add the call to `loadSong()` inside `main.ts` at the end of the function `processImage(function (file) {` (after `changeUI();`), 
 
 ```TypeScript
     // Load random song based on mood
-    music.loadSong(currentMood);
+    loadSong(currentMood);
 ```
 
 Replace the inside of `refreshbtn.on("click", function () {` inside `main.ts` from doing nothing (giving an alert) to loading a song when we try ask for a new song
 
 ```TypeScript
     // Load random song based on mood
-    music.loadSong(currentMood);
+    loadSong(currentMood);
 ```
 
 #### 3. Add div to hold our SoundCloud player
 
-Add the following after `<div class="btn-wrapper"> ... </div`, so we can have our songs play depending on the mode. (Provided by our `loadPlayer()` function in `musichandler.ts`)
+Add the following after `<div class="btn-wrapper"> ... </div`, so we can have our songs play depending on the mode. (Provided by our `loadPlayer()` function in `main.ts`)
 
 ```html
 <div id="musicplayer"></div>
 ```
+
+To show the song being displayed we require a header with `id="track-name"` so after `<img id="selected-img" src="">` in our `index.html` add the following line
+```html
+<h4 id="track-name"></h4>
+```
+
 #### 4. Add some styling
 
 Add the following to your `style.css` just so that nothing is there when we first open our website
@@ -569,7 +586,7 @@ Add the following to your `style.css` just so that nothing is there when we firs
     display:none;
 }
 
-#track-name {
+h4#track-name {
     display:none;
 }
 ```
@@ -582,7 +599,11 @@ Feel free to play around and add your songs to the list.
 
 
 ## Completed Example
-For reference, the complete solution to this demo has provided and can be found [here](demo-complete). You will need to clone or download this whole repository as a zip and open the demo-complete folder using Visual Studio Code. To run, just use the standard `browser-sync start --server --files "**/*"` command.
+For reference, the complete solution to this demo has provided and can be found [here](demo-complete-day-two). You will need to clone or download this whole repository as a zip and open the demo-complete-day-two folder using Visual Studio Code. 
+To retrieve back your `node_modules` run `npm install` and to retrieve back your `typings` run `typings install`.
+You need `node_modules`  for your website to run properly but `typings` just for development purposes.
+
+To run, just use the standard `browser-sync start --server --files "**/*"` command.
 
 ### Tools
 * [CodePen](http://codepen.io) - Experimenting with HTML, CSS and JS snippets. 
