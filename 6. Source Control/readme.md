@@ -18,16 +18,22 @@ I would recommend learning how to use command line even if you prefer the graphi
 To install git, head over to this [link](https://git-scm.com/) and download the latest version of git
 
 ### Setting up a GitHub Account
-Head over to [GitHub](https://github.com/) and create a new account if you don't have one already 
+Head over to [GitHub](https://github.com/) and create a new account if you don't have one already
+
+(Tip: If you are a student, you can get unlimited private repositories for your personal projects! Checkout [GitHub Student Pack](https://education.github.com/pack) )
 
 ## Step 2: Create a Repository
 Open up GitHub and create a 'New Repository' by clicking on the 'plus' icon on the top right corner of the screen
 
 ![Create Repository](img/create_repository.PNG)
 
-Give your repository a name and description. You choose to keep the repository public (others can see the source code) or private. 
+Give your repository a name and description. 
 
-You can also choose to initialise with a README if you want. 
+You choose to keep the repository public (others can see the source code) or private. But for your submission for module 2, you need to keep the repo public.
+
+You can also choose to 
+* initialise with a README 
+* add a gitignore for Node (which will ignore certain files that don't need to be uploaded) 
 
 When you are ready, press 'Create repository'
 
@@ -50,12 +56,13 @@ When you are in the directory, type `clone https://github.com/YOUR_ID/YOUR_GITHU
 ## Step 4: Add Project Files
 Open up your file explorer and navigate to the directory where you cloned your repository files (for me it is C:\Users\Hayden\Documents\GitHub\moodify)
 
-Move your entire project files and folder here
+Move your entire project files and folder here  
+(Note: your project files and folder will look different to the screenshot)
 
 ![Copy Files](img/copy_files.PNG)
 
-Back to cmd, type `git status` and you will see that there are many files are 'untracked'  
-(Hint: Make sure you are inside the project folder - cd moodify)
+Back to cmd go into the newly created repo folder (e.g. `cd moodify`) and type `git status` and you will see that there are many files are 'untracked'  
+(Hint: Make sure you are inside the project folder or else you'll get an error)
 
 ![Git Status](img/git_status.PNG)
 
@@ -101,7 +108,7 @@ To open up command prompt, press **Win+R** and type **cmd**
 ## Git Basics
 Here are the basic git commands. Make sure you are in the right directory or else it won't work.
 
-**Clone** - `git clone`  
+**Clone** - `git clone [YOUR GITHUB REPO URL]`  
 Clones the entire code base to the current location 
 
 **Add** - `git add -A`  
@@ -125,15 +132,15 @@ When you first create your repository, you'll only have one branch called Master
 Switch from one branch to another
 
 **Merge Branch**  - `git merge [name of branch]`  
-Merge a branch with the currently selected branch. In an actual team, you may need to use a 'Pull Request' instead of a direct merge.
+Merge a branch with the currently selected branch. You can instead do a 'Pull Request' and merge on the GitHub website.
 
 
 
 
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com)
-* [Video](http://link.com)
+* [Slide Deck](http://link.com) (Will be up soon!)
+* [Video](http://link.com) (Will be up soon!)
 
 ### Tools
 * [Visual Studio Code](https://code.visualstudio.com) - Code Editor with Git Build In 
@@ -144,3 +151,4 @@ Merge a branch with the currently selected branch. In an actual team, you may ne
 ### Extra Learning Resources
 * [GitHub Online Training](https://try.github.io/)
 * [GitHub Guide](https://guides.github.com/)
+* [Emmet Snippet Extension Cheat Sheet](http://docs.emmet.io/cheat-sheet/)

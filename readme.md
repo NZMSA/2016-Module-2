@@ -60,8 +60,8 @@ popular package manager npm*
 ### [6. Source Control](6. Source Control)
 *documentation in progress*
 * What is it and why we need it
-* Creating a Github account and installing SourceTree
-* Cloning + adding files
+* Creating a Github account and installing Git
+* Cloning + adding files 
 * Committing changes
 
 ### [7. Deployment to Azure](7. Deployment to Azure)
