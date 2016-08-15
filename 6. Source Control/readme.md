@@ -139,11 +139,11 @@ Merge a branch with the currently selected branch. You can instead do a 'Pull Re
 
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com) (Will be up soon!)
+* [Slide Deck](https://1drv.ms/p/s!AiF1orsN8jLBhIs8-Mjx8k0b6v_j-g) 
 * [Video](http://link.com) (Will be up soon!)
 
 ### Tools
-* [Visual Studio Code](https://code.visualstudio.com) - Code Editor with Git Build In 
+* [Visual Studio Code](https://code.visualstudio.com) - Code Editor with Git built in 
 * [Git](https://git-scm.com/)
 * [GitHub](https://github.com)
 * [GitHub Student Pack](https://education.github.com/pack) - Unlimited Private Repos on Github
