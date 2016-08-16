@@ -33,7 +33,7 @@ document.getElementById("musicplayer").innerhtml = "hello"; //innerhtml doesnt e
 
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com)
+* [Slide Deck](https://1drv.ms/p/s!AhUTdgNym7JMjDaYgs10BC0IXWsz)
 * [Video](http://link.com)
 
 
