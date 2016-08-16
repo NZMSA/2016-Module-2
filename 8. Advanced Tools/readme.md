@@ -43,7 +43,7 @@ Now that you have a basic understanding of the languages behind web apps (HTML, 
 
 ## Resources
 ### Bootcamp Content
-* [Slide Deck](http://link.com)
+* [Slide Deck](https://1drv.ms/p/s!AsT6-yAlxrN69xNP9_srS5pINRgW)
 * [Video](http://link.com)
 
 ### Tools
